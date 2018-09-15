@@ -24,22 +24,22 @@ Private Sub Form_Unload(Cancel As Integer)
 Unload frmSplash
 Unload Clocksetting
 Unload frmAbout
-If Common.UnloadactiveX Then
+If UnloadactiveX Then
     If SystemInf = 64 Then
-    Common.Runprog ("regsvr32 /s /u %windir%\SysWOW64\COMDLG32.OCX")
-    Common.Runprog ("regsvr32 /s /u %windir%\SysWOW64\mscomctl.ocx")
-    Common.Runprog ("del %windir%\SysWOW64\COMDLG32.OCX")
-    Common.Runprog ("del %windir%\SysWOW64\mscomctl.ocx")
+    Runprog ("regsvr32 /s /u %windir%\SysWOW64\COMDLG32.OCX")
+    Runprog ("regsvr32 /s /u %windir%\SysWOW64\mscomctl.ocx")
+    Runprog ("del %windir%\SysWOW64\COMDLG32.OCX")
+    Runprog ("del %windir%\SysWOW64\mscomctl.ocx")
 
     Else
-    Common.Runprog ("regsvr32 /s /u %windir%\System32\COMDLG32.OCX")
-    Common.Runprog ("regsvr32 /s /u %windir%\System32\mscomctl.ocx")
-    Common.Runprog ("del %windir%\System32\COMDLG32.OCX")
-    Common.Runprog ("del %windir%\System32\mscomctl.ocx")
+    Runprog ("regsvr32 /s /u %windir%\System32\COMDLG32.OCX")
+    Runprog ("regsvr32 /s /u %windir%\System32\mscomctl.ocx")
+    Runprog ("del %windir%\System32\COMDLG32.OCX")
+    Runprog ("del %windir%\System32\mscomctl.ocx")
 
     End If
     End If
-    
+'----------------–∂‘ÿÀ˘”–¥∞ÃÂ------------------------------
     Dim frm As Form
     For Each frm In Forms
     Unload frm

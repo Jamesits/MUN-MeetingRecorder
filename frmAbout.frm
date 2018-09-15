@@ -1,5 +1,6 @@
 VERSION 5.00
 Begin VB.Form frmAbout 
+   AutoRedraw      =   -1  'True
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "关于我的应用程序"
    ClientHeight    =   4755
@@ -25,14 +26,29 @@ Begin VB.Form frmAbout
    ScaleWidth      =   6662.572
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  '屏幕中心
-   Begin VB.TextBox Text1 
-      Height          =   855
-      Left            =   1080
-      MultiLine       =   -1  'True
-      TabIndex        =   5
-      Text            =   "frmAbout.frx":058A
-      Top             =   2160
+   Begin VB.Frame Frame1 
+      Height          =   975
+      Left            =   960
+      TabIndex        =   7
+      Top             =   2280
       Width           =   4095
+      Begin VB.Label Label3 
+         AutoSize        =   -1  'True
+         Caption         =   "Label3"
+         Height          =   255
+         Left            =   120
+         TabIndex        =   9
+         Top             =   240
+         Width           =   570
+      End
+      Begin VB.Label Label2 
+         AutoSize        =   -1  'True
+         Height          =   255
+         Left            =   120
+         TabIndex        =   8
+         Top             =   240
+         Width           =   60
+      End
    End
    Begin VB.PictureBox picIcon 
       AutoSize        =   -1  'True
@@ -48,7 +64,7 @@ Begin VB.Form frmAbout
       EndProperty
       Height          =   300
       Left            =   240
-      Picture         =   "frmAbout.frx":05D9
+      Picture         =   "frmAbout.frx":058A
       ScaleHeight     =   168.56
       ScaleMode       =   0  'User
       ScaleWidth      =   168.56
@@ -75,10 +91,10 @@ Begin VB.Form frmAbout
       Width           =   1485
    End
    Begin VB.Label Lblalert 
-      Caption         =   $"frmAbout.frx":0B63
+      Caption         =   $"frmAbout.frx":0B14
       Height          =   780
       Left            =   120
-      TabIndex        =   7
+      TabIndex        =   6
       Top             =   3600
       Width           =   4980
    End
@@ -86,7 +102,7 @@ Begin VB.Form frmAbout
       Caption         =   "此软件使用权属于："
       Height          =   255
       Left            =   1080
-      TabIndex        =   6
+      TabIndex        =   5
       Top             =   1920
       Width           =   4095
    End
@@ -103,7 +119,7 @@ Begin VB.Form frmAbout
       Caption         =   "标题"
       ForeColor       =   &H00000000&
       Height          =   480
-      Left            =   1200
+      Left            =   1080
       TabIndex        =   3
       Top             =   240
       Width           =   3885
@@ -120,7 +136,7 @@ Begin VB.Form frmAbout
    Begin VB.Label lblVersion 
       Caption         =   "版本"
       Height          =   225
-      Left            =   1200
+      Left            =   1080
       TabIndex        =   4
       Top             =   780
       Width           =   3885
@@ -171,9 +187,9 @@ End Sub
 
 Private Sub Form_Load()
     Me.Caption = "关于 " & App.Title
-    lblVersion.Caption = "版本 " & App.Major & "." & App.Minor & "." & App.Revision & IIf(Common.Beta, " Beta", "") & IIf(Common.Debugmode, "(Debug mode)", "")
+    lblVersion.Caption = "版本 " & App.Major & "." & App.Minor & "." & App.Revision & IIf(Common.Beta, " Beta", " 正式版") & IIf(Common.Debugmode, "(Debug mode)", "")
     lblTitle.Caption = App.Title
-    Text1.Text = Common.registername + vbCrLf + vbCrLf + Common.registercompany
+    Label3.Caption = Common.registername + vbCrLf + Common.registercompany
 End Sub
 
 Public Sub StartSysInfo()
@@ -259,9 +275,3 @@ GetKeyError:      ' 错误发生后将其清除...
     GetKeyValue = False                                     ' 返回失败
     rc = RegCloseKey(hKey)                                  ' 关闭注册表关键字
 End Function
-
-
-
-Private Sub Text1_Change()
-Text1.Text = Common.registername + vbCrLf + Common.registercompany
-End Sub

@@ -188,50 +188,57 @@ Attribute VB_Exposed = False
 Public SystemInf As Integer
 
 Private Sub Form_Load()
+Dim i As Byte
     DoEvents
-    frmSplash.Show
-    Load Common
-    LoadStatus.Caption = "加载后台支持模块……"
-    lblVersion.Caption = "版本 " & App.Major & "." & App.Minor & "." & App.Revision & IIf(Common.Beta, " Beta", "") & IIf(Common.Debugmode, "(Debug mode)", "")
+    lblVersion.Caption = "版本 " & App.Major & "." & App.Minor & "." & App.Revision & IIf(Common.Beta, " Beta", " 正式版") & IIf(Common.Debugmode, "(Debug mode)", "")
     lblProductName.Caption = App.Title
+    LoadStatus.Caption = "检测注册信息……"
     Regname.Caption = Common.registername
     Regcomp.Caption = Common.registercompany
+    LoadStatus.Caption = "加载中……"
+    SetTransparentWindow Me.hwnd, 100
+    frmSplash.Show
+    frmSplash.Refresh
+    For i = 1 To 100
+    SetTransparentWindow Me.hwnd, 100 - i
+    Delay 1
+    Next i
     LoadStatus.Caption = "加载组件……"
     Load FormUnload
     LoadStatus.Caption = "检查更新……"
     DoEvents
+    If Dir("Update.exe") <> "" Then
     Shell "Update.exe /silent"
+    End If
     LoadStatus.Caption = "检测系统状况……"
     Getsysteminf
     LoadStatus.Caption = "注册控件……"
     frmSplash.Refresh
-    Common.Delay 100
+    Delay 100
     DoEvents
-    If Common.Loadactivex Then
+    If Loadactivex Then
     If SystemInf = 64 Then
-      Common.reg "ActiveX", "%windir%\Syswow64", "comdlg32.ocx"
+      reg "ActiveX", "%windir%\Syswow64", "comdlg32.ocx"
       frmSplash.Refresh
-      Common.reg "ActiveX", "%windir%\Syswow64", "mscomctl.ocx"
+      reg "ActiveX", "%windir%\Syswow64", "mscomctl.ocx"
       frmSplash.Refresh
-      Common.reg "ActiveX", "%windir%\Syswow64", "RICHTX32.OCX"
+      reg "ActiveX", "%windir%\Syswow64", "RICHTX32.OCX"
     Else
-      Common.reg "ActiveX", "%windir%\System32", "comdlg32.ocx"
+      reg "ActiveX", "%windir%\System32", "comdlg32.ocx"
       frmSplash.Refresh
-      Common.reg "ActiveX", "%windir%\System32", "mscomctl.ocx"
+      reg "ActiveX", "%windir%\System32", "mscomctl.ocx"
             frmSplash.Refresh
-      Common.reg "ActiveX", "%windir%\System32", "RICHTX32.OCX"
+      reg "ActiveX", "%windir%\System32", "RICHTX32.OCX"
     End If
     End If
     frmSplash.Refresh
     LoadStatus.Caption = "加载中……"
-    If Common.InitMeet Then
+    If InitMeet Then
     LoadStatus.Caption = "重置会议"
     initini
     End If
-    LoadStatus.Caption = "加载主窗体"
-    DoEvents
-    Form1.Show
-    Unload Me
+    LoadStatus.Caption = "检测分辨率……"
+    pixels.Show
 End Sub
 
 Public Sub Getsysteminf()
@@ -239,13 +246,13 @@ If Dir("%windir%\SysWOW64", vbDirectory) <> "" Then SystemInf = 64 Else SystemIn
 End Sub
 
 Public Sub initini()
-Common.iniFileName = "setting"
-Common.SetIniS "Meeting", "Name", "新会议1"
-Common.SetIniS "Meeting", "Start_Y", 2011
-Common.SetIniS "Meeting", "Start_M", 7
-Common.SetIniS "Meeting", "Start_D", 23
-Common.SetIniS "Meeting", "Start_H", 7
-Common.SetIniS "Meeting", "Start_M", 0
-Common.SetIniS "Meeting", "Start_S", 0
-Common.SetIniN "Meeting", "Lasttime", 3600
+iniFileName = "setting"
+SetIniS "Meeting", "Name", "新会议1"
+SetIniS "Meeting", "Start_Y", 2011
+SetIniS "Meeting", "Start_M", 7
+SetIniS "Meeting", "Start_D", 23
+SetIniS "Meeting", "Start_H", 7
+SetIniS "Meeting", "Start_M", 0
+SetIniS "Meeting", "Start_S", 0
+SetIniN "Meeting", "Lasttime", 3600
 End Sub
