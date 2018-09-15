@@ -25,7 +25,6 @@ Begin VB.Form FrmMain
    ScaleHeight     =   7425
    ScaleWidth      =   11760
    StartUpPosition =   2  '屏幕中心
-   WindowState     =   2  'Maximized
    Begin ComctlLib.Toolbar TB1 
       Height          =   420
       Left            =   4200
@@ -43,125 +42,105 @@ Begin VB.Form FrmMain
       BeginProperty Buttons {0713E452-850A-101B-AFC0-4210102A8DA7} 
          NumButtons      =   20
          BeginProperty Button1 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-            Key             =   ""
             Description     =   "新建"
             Object.ToolTipText     =   "新建"
             Object.Tag             =   ""
             ImageIndex      =   1
          EndProperty
          BeginProperty Button2 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-            Key             =   ""
             Object.ToolTipText     =   "打开"
             Object.Tag             =   ""
             ImageIndex      =   2
          EndProperty
          BeginProperty Button3 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-            Key             =   ""
             Object.ToolTipText     =   "保存"
             Object.Tag             =   ""
             ImageIndex      =   3
          EndProperty
          BeginProperty Button4 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-            Key             =   ""
             Object.ToolTipText     =   "打印"
             Object.Tag             =   ""
             ImageIndex      =   4
          EndProperty
          BeginProperty Button5 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-            Key             =   ""
             Object.Tag             =   ""
             Style           =   3
             MixedState      =   -1  'True
          EndProperty
          BeginProperty Button6 {0713F354-850A-101B-AFC0-4210102A8DA7} 
             Enabled         =   0   'False
-            Key             =   ""
             Object.ToolTipText     =   "撤销"
             Object.Tag             =   ""
             ImageIndex      =   5
          EndProperty
          BeginProperty Button7 {0713F354-850A-101B-AFC0-4210102A8DA7} 
             Enabled         =   0   'False
-            Key             =   ""
             Object.ToolTipText     =   "重复"
             Object.Tag             =   ""
             ImageIndex      =   6
          EndProperty
          BeginProperty Button8 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-            Key             =   ""
             Object.Tag             =   ""
             Style           =   3
          EndProperty
          BeginProperty Button9 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-            Key             =   ""
             Object.ToolTipText     =   "查找"
             Object.Tag             =   ""
             ImageIndex      =   7
          EndProperty
          BeginProperty Button10 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-            Key             =   ""
             Object.ToolTipText     =   "剪切"
             Object.Tag             =   ""
             ImageIndex      =   8
          EndProperty
          BeginProperty Button11 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-            Key             =   ""
             Object.ToolTipText     =   "复制"
             Object.Tag             =   ""
             ImageIndex      =   9
          EndProperty
          BeginProperty Button12 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-            Key             =   ""
             Object.ToolTipText     =   "粘贴"
             Object.Tag             =   ""
             ImageIndex      =   10
          EndProperty
          BeginProperty Button13 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-            Key             =   ""
             Object.Tag             =   ""
             Style           =   3
          EndProperty
          BeginProperty Button14 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-            Key             =   ""
             Object.ToolTipText     =   "粗体"
             Object.Tag             =   ""
             ImageIndex      =   11
             Style           =   1
          EndProperty
          BeginProperty Button15 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-            Key             =   ""
             Object.ToolTipText     =   "下划线"
             Object.Tag             =   ""
             ImageIndex      =   12
             Style           =   1
          EndProperty
          BeginProperty Button16 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-            Key             =   ""
             Object.ToolTipText     =   "斜体"
             Object.Tag             =   ""
             ImageIndex      =   13
             Style           =   1
          EndProperty
          BeginProperty Button17 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-            Key             =   ""
             Object.ToolTipText     =   "字体"
             Object.Tag             =   ""
             ImageIndex      =   14
          EndProperty
          BeginProperty Button18 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-            Key             =   ""
             Object.ToolTipText     =   "插入图像"
             Object.Tag             =   ""
             ImageIndex      =   15
          EndProperty
          BeginProperty Button19 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-            Key             =   ""
             Object.Tag             =   ""
             Style           =   3
             MixedState      =   -1  'True
          EndProperty
          BeginProperty Button20 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-            Key             =   ""
             Object.ToolTipText     =   "菜单"
             Object.Tag             =   ""
             ImageIndex      =   16
@@ -169,13 +148,14 @@ Begin VB.Form FrmMain
       EndProperty
       BorderStyle     =   1
    End
-   Begin CContainer.ControlContainer CContainer1 
-      Height          =   1755
+   Begin CContainer.ControlContainer CCConButtons 
+      Height          =   675
       Left            =   0
-      Top             =   0
-      Width           =   4095
-      _ExtentX        =   7223
-      _ExtentY        =   3096
+      Top             =   1140
+      Width           =   3915
+      _ExtentX        =   6906
+      _ExtentY        =   1191
+      BackColor       =   16777215
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "微软雅黑"
          Size            =   9
@@ -187,33 +167,115 @@ Begin VB.Form FrmMain
       EndProperty
       FontName        =   "微软雅黑"
       FontSize        =   9
-      Begin VB.CommandButton CmdTimeSet 
-         Caption         =   "时间设置"
-         Height          =   255
-         Left            =   2700
+      Begin VB.CommandButton CmdStart 
+         Caption         =   "开始/暂停"
+         Height          =   435
+         Left            =   60
          TabIndex        =   6
-         Top             =   1380
-         Width           =   975
+         Top             =   120
+         Width           =   1155
       End
       Begin VB.CommandButton CmdStop 
          Caption         =   "停止/重置"
-         Height          =   255
-         Left            =   1380
+         Height          =   435
+         Left            =   1320
          TabIndex        =   5
-         Top             =   1380
-         Width           =   975
+         Top             =   120
+         Width           =   1155
       End
-      Begin VB.CommandButton CmdStart 
-         Caption         =   "开始/暂停"
-         Height          =   255
-         Left            =   240
+      Begin VB.CommandButton CmdTimeSet 
+         Caption         =   "时间设置"
+         Height          =   435
+         Left            =   2580
          TabIndex        =   4
+         Top             =   120
+         Width           =   1155
+      End
+      Begin VB.Label LblArray 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00FFFFFF&
+         BackStyle       =   0  'Transparent
+         Caption         =   "<"
+         ForeColor       =   &H80000008&
+         Height          =   285
+         Left            =   3780
+         TabIndex        =   12
+         Top             =   0
+         Width           =   165
+      End
+   End
+   Begin CContainer.ControlContainer CContainer1 
+      Height          =   1755
+      Left            =   0
+      Top             =   0
+      Width           =   4095
+      _ExtentX        =   7223
+      _ExtentY        =   3096
+      BackColor       =   16777215
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "微软雅黑"
+         Size            =   9
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      FontName        =   "微软雅黑"
+      FontSize        =   9
+      Begin VB.Label LblLeftTime 
+         BackColor       =   &H00FFFFFF&
+         Caption         =   "剩余 00:00:00"
+         Height          =   255
+         Left            =   2820
+         TabIndex        =   11
          Top             =   1380
-         Width           =   1035
+         Width           =   1215
+      End
+      Begin VB.Label LblPassTime 
+         AutoSize        =   -1  'True
+         BackColor       =   &H00FFFFFF&
+         Caption         =   "已经过 00:00:00"
+         Height          =   255
+         Left            =   2700
+         TabIndex        =   10
+         Top             =   1140
+         Width           =   1320
+      End
+      Begin VB.Label LblMeetTime 
+         AutoSize        =   -1  'True
+         BackColor       =   &H00FFFFFF&
+         Caption         =   "会议时间 00:00:00"
+         Height          =   255
+         Left            =   60
+         TabIndex        =   9
+         Top             =   1380
+         Width           =   1500
+      End
+      Begin VB.Label LblSetTime 
+         AutoSize        =   -1  'True
+         BackColor       =   &H00FFFFFF&
+         Caption         =   "定时 00:00:00"
+         Height          =   255
+         Left            =   1620
+         TabIndex        =   8
+         Top             =   1380
+         Width           =   1140
+      End
+      Begin VB.Label LblSysTime 
+         AutoSize        =   -1  'True
+         BackColor       =   &H00FFFFFF&
+         Caption         =   "系统时间 0000-00-00 00:00:00"
+         Height          =   255
+         Left            =   60
+         TabIndex        =   7
+         Top             =   1140
+         Width           =   2550
       End
       Begin VB.Label Label1 
          Alignment       =   2  'Center
          AutoSize        =   -1  'True
+         BackColor       =   &H00FFFFFF&
          Caption         =   "00:00:00"
          BeginProperty Font 
             Name            =   "微软雅黑"
@@ -224,10 +286,10 @@ Begin VB.Form FrmMain
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   1245
-         Left            =   120
+         Height          =   1005
+         Left            =   180
          TabIndex        =   3
-         Top             =   0
+         Top             =   60
          Width           =   3870
       End
    End
@@ -473,6 +535,9 @@ Private InitWidth As Long
 Private InitHeight As Long
 '/改变窗口大小
 Private RTFundoflag As Boolean
+Private butPopedFlag As Boolean
+
+
 
 Private Sub Form_Initialize()
 InitCommonControls
@@ -493,13 +558,21 @@ Next Ctl
 On Error GoTo 0
 '/改变窗口大小
 MVer.Caption = "版本 " & getVersionString
-
 RTFundoflag = False
+With CCConButtons
+.BackColor = vbWhite
+.Left = 0
+.Width = 3795
+.Top = 1140
+.Height = 675
+End With
 Me.Show
-
-'MNUPop.Refresh
-
+Me.Refresh
 DebugEvent
+Sleep 500
+MovePort CCConButtons, 20, -CCConButtons.Width + LblArray.Width
+butPopedFlag = False
+LblArray = ">"
 End Sub
 
 Private Sub Form_Resize()
@@ -557,6 +630,18 @@ arrangeControls
 End If
 End Sub
 
+Private Sub LblArray_Click()
+If butPopedFlag = False Then
+MovePort CCConButtons, 20, 0
+butPopedFlag = True
+LblArray = "<"
+Else
+MovePort CCConButtons, 20, -CCConButtons.Width + LblArray.Width
+butPopedFlag = False
+LblArray = ">"
+End If
+End Sub
+
 Private Sub MnuDyn_Click(Index As Integer)
 Load MnuDyn(MnuDyn.UBound + 1)
 End Sub
@@ -566,38 +651,28 @@ End
 End Sub
 
 Public Sub InsertPicture(ByVal path As String)
-'Dim tempclip, clipformat As Integer
 Dim a As Object
 Set a = CreateObject("WScript.shell")
-'tempclip = Clipboard.GetText
-'clipformat = Clipboard.GetFormat
 Clipboard.Clear
 Clipboard.SetData LoadPicture(path)
 FrmMain.RichTextBox1.SetFocus
 a.SendKeys "^V"
-'Clipboard.SetText tempclip
 Set a = Nothing
 End Sub
 
 Private Sub NormalEvents_Timer()
 Me.Refresh
+LblSysTime = "系统时间 " & Format$(Date, "yyyy-mm-dd") & " " & Format$(Time, "hh:mm:ss")
+'Dim p As POINTAPI
+'GetCursorPos p
+'If p.X < 500 And p.Y > CCConButtons.Top And p.Y < CCConButtons.Top + CCConButtons.Height And butPopedFlag = False Then
+'MovePort CCConButtons, 20, 0
+'End If
+
+
 End Sub
 
 Private Sub arrangeControls()
-
-'With Shape1
-'.Left = MNUPop.Left - 150
-'.Top = MNUPop.Top - 50
-'.Height = MNUPop.Height + 100
-'.Width = MNUPop.Width + 300
-'MNUPop.AutoSize = False
-'MNUPop.Left = .Left
-''MNUPop.Top = .Top
-'MNUPop.Height = .Height
-'MNUPop.Width = .Width
-'.BackColor = RGB(20, 143, 203)
-'End With
-'TODO:Solve the problem below
 With TB1
 .Top = 0
 .Width = Int(Me.Width * ratio)
@@ -608,7 +683,7 @@ With RichTextBox1
 .Top = TB1.Top + TB1.Height
 .Width = TB1.Width - 220
 .Left = TB1.Left
-.Height = Me.Height - .Top - TB1.Height - 172
+.Height = Me.Height - .Top - TB1.Height - 130
 End With
 
 With List1
@@ -630,6 +705,10 @@ With Label1
 
 End With
 
+With LblArray
+.Left = .Parent.Width - .Width
+.Height = .Parent.Height
+End With
 End Sub
 
 Public Sub DebugEvent()
