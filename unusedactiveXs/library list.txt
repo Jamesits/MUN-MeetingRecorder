@@ -1,0 +1,3 @@
+msvbvm60.dll
+comdlg32.ocx
+mscomctl.ocx
