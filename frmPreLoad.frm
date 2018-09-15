@@ -46,9 +46,10 @@ Me.Width = 8415
 Me.Height = 3450
 Me.Show
 Me.Refresh
-Print "MUN Recorder 4.0 Alpha"
+Print "MUN Meeting Recorder 4.0 Alpha"
 Print "Version:" & getVersionString
-Print "This version is written by zhj."
+Print "This version is written by James Swineson."
+Print "Model United Nation Meeting Recorder is licensed under a Creative Commons 署名-非商业性使用-相同方式共享 2.5 中国大陆 License基于sourceforge.net上的作品创作。"
 Print "Copyright (c) 2009-2011 Createnhance Solutions.All rights reserved."
 Me.Refresh
 Print "Status:Check Updates"

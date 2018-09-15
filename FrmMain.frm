@@ -42,105 +42,125 @@ Begin VB.Form FrmMain
       BeginProperty Buttons {0713E452-850A-101B-AFC0-4210102A8DA7} 
          NumButtons      =   20
          BeginProperty Button1 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+            Key             =   ""
             Description     =   "新建"
             Object.ToolTipText     =   "新建"
             Object.Tag             =   ""
             ImageIndex      =   1
          EndProperty
          BeginProperty Button2 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+            Key             =   ""
             Object.ToolTipText     =   "打开"
             Object.Tag             =   ""
             ImageIndex      =   2
          EndProperty
          BeginProperty Button3 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+            Key             =   ""
             Object.ToolTipText     =   "保存"
             Object.Tag             =   ""
             ImageIndex      =   3
          EndProperty
          BeginProperty Button4 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+            Key             =   ""
             Object.ToolTipText     =   "打印"
             Object.Tag             =   ""
             ImageIndex      =   4
          EndProperty
          BeginProperty Button5 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+            Key             =   ""
             Object.Tag             =   ""
             Style           =   3
             MixedState      =   -1  'True
          EndProperty
          BeginProperty Button6 {0713F354-850A-101B-AFC0-4210102A8DA7} 
             Enabled         =   0   'False
+            Key             =   ""
             Object.ToolTipText     =   "撤销"
             Object.Tag             =   ""
             ImageIndex      =   5
          EndProperty
          BeginProperty Button7 {0713F354-850A-101B-AFC0-4210102A8DA7} 
             Enabled         =   0   'False
+            Key             =   ""
             Object.ToolTipText     =   "重复"
             Object.Tag             =   ""
             ImageIndex      =   6
          EndProperty
          BeginProperty Button8 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+            Key             =   ""
             Object.Tag             =   ""
             Style           =   3
          EndProperty
          BeginProperty Button9 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+            Key             =   ""
             Object.ToolTipText     =   "查找"
             Object.Tag             =   ""
             ImageIndex      =   7
          EndProperty
          BeginProperty Button10 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+            Key             =   ""
             Object.ToolTipText     =   "剪切"
             Object.Tag             =   ""
             ImageIndex      =   8
          EndProperty
          BeginProperty Button11 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+            Key             =   ""
             Object.ToolTipText     =   "复制"
             Object.Tag             =   ""
             ImageIndex      =   9
          EndProperty
          BeginProperty Button12 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+            Key             =   ""
             Object.ToolTipText     =   "粘贴"
             Object.Tag             =   ""
             ImageIndex      =   10
          EndProperty
          BeginProperty Button13 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+            Key             =   ""
             Object.Tag             =   ""
             Style           =   3
          EndProperty
          BeginProperty Button14 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+            Key             =   ""
             Object.ToolTipText     =   "粗体"
             Object.Tag             =   ""
             ImageIndex      =   11
             Style           =   1
          EndProperty
          BeginProperty Button15 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+            Key             =   ""
             Object.ToolTipText     =   "下划线"
             Object.Tag             =   ""
             ImageIndex      =   12
             Style           =   1
          EndProperty
          BeginProperty Button16 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+            Key             =   ""
             Object.ToolTipText     =   "斜体"
             Object.Tag             =   ""
             ImageIndex      =   13
             Style           =   1
          EndProperty
          BeginProperty Button17 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+            Key             =   ""
             Object.ToolTipText     =   "字体"
             Object.Tag             =   ""
             ImageIndex      =   14
          EndProperty
          BeginProperty Button18 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+            Key             =   ""
             Object.ToolTipText     =   "插入图像"
             Object.Tag             =   ""
             ImageIndex      =   15
          EndProperty
          BeginProperty Button19 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+            Key             =   ""
             Object.Tag             =   ""
             Style           =   3
             MixedState      =   -1  'True
          EndProperty
          BeginProperty Button20 {0713F354-850A-101B-AFC0-4210102A8DA7} 
+            Key             =   ""
             Object.ToolTipText     =   "菜单"
             Object.Tag             =   ""
             ImageIndex      =   16
@@ -150,10 +170,10 @@ Begin VB.Form FrmMain
    End
    Begin CContainer.ControlContainer CCConButtons 
       Height          =   675
-      Left            =   0
+      Left            =   -3780
       Top             =   1080
-      Width           =   3915
-      _ExtentX        =   6906
+      Width           =   3930
+      _ExtentX        =   6932
       _ExtentY        =   1191
       BackColor       =   16777215
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -195,10 +215,11 @@ Begin VB.Form FrmMain
          Appearance      =   0  'Flat
          BackColor       =   &H00FFFFFF&
          BackStyle       =   0  'Transparent
+         BorderStyle     =   1  'Fixed Single
          Caption         =   "<"
          ForeColor       =   &H80000008&
          Height          =   285
-         Left            =   3780
+         Left            =   3770
          TabIndex        =   12
          Top             =   0
          Width           =   165
@@ -227,7 +248,7 @@ Begin VB.Form FrmMain
          BackColor       =   &H00FFFFFF&
          Caption         =   "剩余 00:00:00"
          Height          =   255
-         Left            =   2880
+         Left            =   2820
          TabIndex        =   11
          Top             =   1500
          Width           =   1215
@@ -237,7 +258,7 @@ Begin VB.Form FrmMain
          BackColor       =   &H00FFFFFF&
          Caption         =   "已经过 00:00:00"
          Height          =   255
-         Left            =   2700
+         Left            =   2715
          TabIndex        =   10
          Top             =   1260
          Width           =   1320
@@ -247,7 +268,7 @@ Begin VB.Form FrmMain
          BackColor       =   &H00FFFFFF&
          Caption         =   "会议时间 00:00:00"
          Height          =   255
-         Left            =   120
+         Left            =   180
          TabIndex        =   9
          Top             =   1500
          Width           =   1500
@@ -267,7 +288,7 @@ Begin VB.Form FrmMain
          BackColor       =   &H00FFFFFF&
          Caption         =   "系统时间 0000-00-00 00:00:00"
          Height          =   255
-         Left            =   120
+         Left            =   180
          TabIndex        =   7
          Top             =   1260
          Width           =   2550
@@ -335,6 +356,7 @@ Begin VB.Form FrmMain
       _ExtentX        =   14843
       _ExtentY        =   12409
       _Version        =   393217
+      Enabled         =   -1  'True
       HideSelection   =   0   'False
       ScrollBars      =   3
       DisableNoScroll =   -1  'True
@@ -575,6 +597,10 @@ With CCConButtons
 .Top = 1140
 .Height = 675
 End With
+CCConButtons.Left = 0
+CCConButtons.Top = 1080
+butPopedFlag = True
+LblArray = "<"
 Me.Show
 Me.Refresh
 DebugEvent
@@ -584,10 +610,17 @@ butPopedFlag = False
 LblArray = ">"
 End Sub
 
+Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
+
+'注意！在这行命令执行之前保存！！！
+RichTextBox1.TextRTF = ""
+End Sub
+
 Private Sub Form_Resize()
+On Error Resume Next
 If Me.Height <= 945 Or Me.Width <= 2250 Then
-Me.Height = IIf(Me.Height <= 945, 945, Me.Height)
-Me.Width = IIf(Me.Width <= 2250, 2250, Me.Width)
+'Me.Height = IIf(Me.Height <= 945, 945, Me.Height)
+'Me.Width = IIf(Me.Width <= 2250, 2250, Me.Width)
 ReleaseCapture
 Else
 
@@ -651,6 +684,10 @@ LblArray = ">"
 End If
 End Sub
 
+Private Sub MAbout_Click()
+frmAbout.Show
+End Sub
+
 Private Sub MnuDyn_Click(Index As Integer)
 Load MnuDyn(MnuDyn.UBound + 1)
 End Sub
@@ -660,14 +697,47 @@ End
 End Sub
 
 Public Sub InsertPicture(ByVal path As String)
-Dim a As Object
+Dim a As Object, tempd As Variant, tempt As String
+On Error Resume Next
 Set a = CreateObject("WScript.shell")
+tempd = Clipboard.GetData
+tempt = Clipboard.GetText
 Clipboard.Clear
 Clipboard.SetData LoadPicture(path)
 FrmMain.RichTextBox1.SetFocus
 a.SendKeys "^V"
+Sleep 1000
+'Clipboard.Clear
+Clipboard.SetData tempd
+Clipboard.SetText tempt
 Set a = Nothing
 End Sub
+
+Public Sub copytext()
+Dim a As Object
+Set a = CreateObject("WScript.shell")
+FrmMain.RichTextBox1.SetFocus
+a.SendKeys "^C"
+Set a = Nothing
+End Sub
+
+Public Sub cuttext()
+Dim a As Object
+Set a = CreateObject("WScript.shell")
+FrmMain.RichTextBox1.SetFocus
+a.SendKeys "^X"
+Set a = Nothing
+End Sub
+
+Public Sub pastetext()
+Dim a As Object
+Set a = CreateObject("WScript.shell")
+FrmMain.RichTextBox1.SetFocus
+a.SendKeys "^V"
+Set a = Nothing
+End Sub
+
+
 
 Private Sub NormalEvents_Timer()
 Me.Refresh
@@ -732,12 +802,23 @@ TB1.Buttons(7).Enabled = False
 End If
 End Sub
 
+Private Sub RichTextBox1_SelChange()
+On Error Resume Next
+TB1.Buttons(14).Value = -CInt(RichTextBox1.SelBold)
+TB1.Buttons(15).Value = -CInt(RichTextBox1.SelUnderline)
+TB1.Buttons(16).Value = -CInt(RichTextBox1.SelItalic)
+End Sub
+
 Private Sub TB1_ButtonClick(ByVal Button As ComctlLib.Button)
 Select Case Button.Index
 Case 1 '新建
+NewFile
 Case 2 '打开
+OpenFile
 Case 3 '保存
+SaveFile
 Case 4 '打印
+
 Case 6 '撤销
 RTFundoflag = True
 TB1.Buttons(6).Enabled = False
@@ -752,8 +833,11 @@ undo
 RTFundoflag = False
 Case 9 '查找
 Case 10 '剪切
+cuttext
 Case 11 '复制
+copytext
 Case 12 '粘贴
+pastetext
 Case 14 '粗体
 RichTextBox1.SelBold = TB1.Buttons(14).Value
 Case 15 '下划线
@@ -778,11 +862,14 @@ RichTextBox1.SelStrikeThru = CD1.FontStrikethru
 RichTextBox1.SelItalic = CD1.FontItalic
 RichTextBox1.SelUnderline = CD1.FontUnderline
 Case 18 '插入图像
+On Error GoTo ext
+CD1.CancelError = True
 CD1.Filter = "Images(*.jpg;*.bmp)|*.jpg;*.bmp"
 CD1.ShowOpen
 InsertPicture (CD1.FileName)
 Case 20 '菜单
-PopupMenu PopMNU
+'PopupMenu PopMNU, , TB1.Buttons(20).Left + TB1.Left + 15, TB1.Top + TB1.Buttons(20).Top + TB1.Buttons(20).Height + 15
+PopupMenu PopMNU, , TB1.Buttons(20).Left + TB1.Left + 15, TB1.Top + TB1.Height
 End Select
 ext:
 End Sub
@@ -793,4 +880,35 @@ Set a = CreateObject("WScript.shell")
 FrmMain.RichTextBox1.SetFocus
 a.SendKeys "^Z"
 Set a = Nothing
+End Sub
+
+
+Private Sub OpenFile()
+On Error GoTo ext
+CD1.CancelError = True
+CD1.DialogTitle = "打开"
+CD1.Filter = "所有支持的格式(*.rtf;*.txt)|*.rtf;*.txt|Rich Text Format(*.rtf)|*.rtf|文本文档(*.txt)|*.txt|所有文件(*.*)|*.*"
+CD1.ShowOpen
+RichTextBox1.LoadFile CD1.FileName
+ext:
+End Sub
+
+
+Private Sub SaveFile()
+On Error GoTo ext
+CD1.CancelError = True
+CD1.DialogTitle = "保存"
+CD1.Filter = "Rich Text Format(*.rtf)|*.rtf|文本文档(*.txt)|*.txt|所有文件(*.*)|*.*"
+CD1.ShowSave
+If CD1.FilterIndex = 2 Then
+RichTextBox1.SaveFile CD1.FileName, 1
+Else
+RichTextBox1.SaveFile CD1.FileName, 0
+End If
+
+ext:
+End Sub
+
+Private Sub NewFile()
+
 End Sub
