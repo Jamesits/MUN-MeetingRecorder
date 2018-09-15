@@ -10,7 +10,7 @@ Begin VB.Form FrmMain
    ClientLeft      =   4140
    ClientTop       =   3330
    ClientWidth     =   11760
-   FillColor       =   &H0000FF00&
+   FillColor       =   &H00FFFFFF&
    FillStyle       =   0  'Solid
    BeginProperty Font 
       Name            =   "微软雅黑"
@@ -151,7 +151,7 @@ Begin VB.Form FrmMain
    Begin CContainer.ControlContainer CCConButtons 
       Height          =   675
       Left            =   0
-      Top             =   1140
+      Top             =   1080
       Width           =   3915
       _ExtentX        =   6906
       _ExtentY        =   1191
@@ -227,9 +227,9 @@ Begin VB.Form FrmMain
          BackColor       =   &H00FFFFFF&
          Caption         =   "剩余 00:00:00"
          Height          =   255
-         Left            =   2820
+         Left            =   2880
          TabIndex        =   11
-         Top             =   1380
+         Top             =   1500
          Width           =   1215
       End
       Begin VB.Label LblPassTime 
@@ -239,7 +239,7 @@ Begin VB.Form FrmMain
          Height          =   255
          Left            =   2700
          TabIndex        =   10
-         Top             =   1140
+         Top             =   1260
          Width           =   1320
       End
       Begin VB.Label LblMeetTime 
@@ -247,9 +247,9 @@ Begin VB.Form FrmMain
          BackColor       =   &H00FFFFFF&
          Caption         =   "会议时间 00:00:00"
          Height          =   255
-         Left            =   60
+         Left            =   120
          TabIndex        =   9
-         Top             =   1380
+         Top             =   1500
          Width           =   1500
       End
       Begin VB.Label LblSetTime 
@@ -257,9 +257,9 @@ Begin VB.Form FrmMain
          BackColor       =   &H00FFFFFF&
          Caption         =   "定时 00:00:00"
          Height          =   255
-         Left            =   1620
+         Left            =   1680
          TabIndex        =   8
-         Top             =   1380
+         Top             =   1500
          Width           =   1140
       End
       Begin VB.Label LblSysTime 
@@ -267,9 +267,9 @@ Begin VB.Form FrmMain
          BackColor       =   &H00FFFFFF&
          Caption         =   "系统时间 0000-00-00 00:00:00"
          Height          =   255
-         Left            =   60
+         Left            =   120
          TabIndex        =   7
-         Top             =   1140
+         Top             =   1260
          Width           =   2550
       End
       Begin VB.Label Label1 
@@ -342,6 +342,15 @@ Begin VB.Form FrmMain
       Appearance      =   0
       AutoVerbMenu    =   -1  'True
       TextRTF         =   $"FrmMain.frx":0004
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "微软雅黑"
+         Size            =   18
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
    End
    Begin ComctlLib.ImageList IL1 
       Left            =   10920
@@ -525,7 +534,7 @@ Private Declare Function ReleaseCapture Lib "user32 " () As Long
 Private Declare Function GetCursorPos Lib "user32" (lpPoint As POINTAPI) As Long
 Private Declare Sub Sleep Lib "kernel32" (ByVal dwMilliseconds As Long)
 Private Type POINTAPI
-        X As Long
+        x As Long
         Y As Long
 End Type
 Const ratio = 2 / 3 '窗口切分比例
@@ -706,8 +715,8 @@ With Label1
 End With
 
 With LblArray
-.Left = .Parent.Width - .Width
-.Height = .Parent.Height
+.Left = CCConButtons.Width - .Width
+.Height = CCConButtons.Height
 End With
 End Sub
 
@@ -746,9 +755,28 @@ Case 10 '剪切
 Case 11 '复制
 Case 12 '粘贴
 Case 14 '粗体
+RichTextBox1.SelBold = TB1.Buttons(14).Value
 Case 15 '下划线
+RichTextBox1.SelUnderline = TB1.Buttons(15).Value
 Case 16 '斜体
+RichTextBox1.SelItalic = TB1.Buttons(16).Value
 Case 17 '字体
+On Error Resume Next
+CD1.FontName = RichTextBox1.SelFontName
+CD1.FontSize = RichTextBox1.SelFontSize
+CD1.FontBold = RichTextBox1.SelBold
+CD1.FontStrikethru = RichTextBox1.SelStrikeThru
+CD1.FontItalic = RichTextBox1.SelItalic
+CD1.FontUnderline = RichTextBox1.SelUnderline
+On Error GoTo ext
+CD1.CancelError = True
+CD1.ShowFont
+RichTextBox1.SelFontName = CD1.FontName
+RichTextBox1.SelFontSize = CD1.FontSize
+RichTextBox1.SelBold = CD1.FontBold
+RichTextBox1.SelStrikeThru = CD1.FontStrikethru
+RichTextBox1.SelItalic = CD1.FontItalic
+RichTextBox1.SelUnderline = CD1.FontUnderline
 Case 18 '插入图像
 CD1.Filter = "Images(*.jpg;*.bmp)|*.jpg;*.bmp"
 CD1.ShowOpen
@@ -756,6 +784,7 @@ InsertPicture (CD1.FileName)
 Case 20 '菜单
 PopupMenu PopMNU
 End Select
+ext:
 End Sub
 
 Public Sub undo()
