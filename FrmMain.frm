@@ -2,7 +2,7 @@ VERSION 5.00
 Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.3#0"; "COMCTL32.OCX"
 Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
 Object = "{3B7C8863-D78F-101B-B9B5-04021C009402}#1.2#0"; "RICHTX32.OCX"
-Object = "{E7A0891C-94FE-4D84-B694-12E7EF672CAF}#1.0#0"; "ControlContainer.ocx"
+Object = "{E7A0891C-94FE-4D84-B694-12E7EF672CAF}#2.0#0"; "ControlContainer.ocx"
 Begin VB.Form FrmMain 
    BackColor       =   &H00FFFFFF&
    Caption         =   "MUN Meeting Recorder"
@@ -169,13 +169,48 @@ Begin VB.Form FrmMain
       EndProperty
       BorderStyle     =   1
    End
-   Begin π§≥Ã1.ControlContainer CContainer1 
-      Height          =   1815
+   Begin CContainer.ControlContainer CContainer1 
+      Height          =   1755
       Left            =   0
       Top             =   0
       Width           =   4095
       _ExtentX        =   7223
-      _ExtentY        =   3201
+      _ExtentY        =   3096
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Œ¢»Ì—≈∫⁄"
+         Size            =   9
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      FontName        =   "Œ¢»Ì—≈∫⁄"
+      FontSize        =   9
+      Begin VB.CommandButton CmdTimeSet 
+         Caption         =   " ±º‰…Ë÷√"
+         Height          =   255
+         Left            =   2700
+         TabIndex        =   6
+         Top             =   1380
+         Width           =   975
+      End
+      Begin VB.CommandButton CmdStop 
+         Caption         =   "Õ£÷π/÷ÿ÷√"
+         Height          =   255
+         Left            =   1380
+         TabIndex        =   5
+         Top             =   1380
+         Width           =   975
+      End
+      Begin VB.CommandButton CmdStart 
+         Caption         =   "ø™ º/‘›Õ£"
+         Height          =   255
+         Left            =   240
+         TabIndex        =   4
+         Top             =   1380
+         Width           =   1035
+      End
       Begin VB.Label Label1 
          Alignment       =   2  'Center
          AutoSize        =   -1  'True
@@ -190,9 +225,9 @@ Begin VB.Form FrmMain
             Strikethrough   =   0   'False
          EndProperty
          Height          =   1245
-         Left            =   45
+         Left            =   120
          TabIndex        =   3
-         Top             =   180
+         Top             =   0
          Width           =   3870
       End
    End

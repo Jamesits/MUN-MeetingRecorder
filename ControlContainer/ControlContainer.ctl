@@ -43,6 +43,12 @@ Event Resize() 'MappingInfo=UserControl,UserControl,-1,Resize
 Attribute Resize.VB_Description = "µ±µÚÒ»´ÎÏÔÊ¾Ò»¸ö´°ÌåÊ±»ò¸Ä±äÒ»¸ö¶ÔÏóµÄ´óĞ¡Ê±·¢Éú¡£"
 Event Show() 'MappingInfo=UserControl,UserControl,-1,Show
 Attribute Show.VB_Description = "µ±¿Ø¼şµÄ Visible ÊôĞÔ±äÎª True Ê±·¢Éú¡£"
+'È±Ê¡ÊôĞÔÖµ:
+Const m_def_Alpha = 100
+'ÊôĞÔ±äÁ¿:
+Dim m_Alpha As Byte
+
+
 
 
 '×¢Òâ£¡²»ÒªÉ¾³ı»òĞŞ¸ÄÏÂÁĞ±»×¢ÊÍµÄĞĞ£¡
@@ -282,89 +288,82 @@ Public Property Let FillStyle(ByVal New_FillStyle As Integer)
     PropertyChanged "FillStyle"
 End Property
 
-'×¢Òâ£¡²»ÒªÉ¾³ı»òĞŞ¸ÄÏÂÁĞ±»×¢ÊÍµÄĞĞ£¡
-'MappingInfo=UserControl,UserControl,-1,FontBold
-Public Property Get FontBold() As Boolean
-Attribute FontBold.VB_Description = "·µ»Ø/ÉèÖÃ´ÖÌå×ÖÑùÊ½¡£"
-    FontBold = UserControl.FontBold
-End Property
-
-Public Property Let FontBold(ByVal New_FontBold As Boolean)
-    UserControl.FontBold() = New_FontBold
-    PropertyChanged "FontBold"
-End Property
-
-'×¢Òâ£¡²»ÒªÉ¾³ı»òĞŞ¸ÄÏÂÁĞ±»×¢ÊÍµÄĞĞ£¡
-'MappingInfo=UserControl,UserControl,-1,FontItalic
-Public Property Get FontItalic() As Boolean
-Attribute FontItalic.VB_Description = "·µ»Ø/ÉèÖÃĞ±Ìå×ÖÑùÊ½¡£"
-    FontItalic = UserControl.FontItalic
-End Property
-
-Public Property Let FontItalic(ByVal New_FontItalic As Boolean)
-    UserControl.FontItalic() = New_FontItalic
-    PropertyChanged "FontItalic"
-End Property
-
-'×¢Òâ£¡²»ÒªÉ¾³ı»òĞŞ¸ÄÏÂÁĞ±»×¢ÊÍµÄĞĞ£¡
-'MappingInfo=UserControl,UserControl,-1,FontName
-Public Property Get FontName() As String
-Attribute FontName.VB_Description = "Ö¸¶¨¸ø¶¨²ãµÄÃ¿Ò»ĞĞ³öÏÖµÄ×ÖÌåÃû¡£"
-    FontName = UserControl.FontName
-End Property
-
-Public Property Let FontName(ByVal New_FontName As String)
-    UserControl.FontName() = New_FontName
-    PropertyChanged "FontName"
-End Property
-
-'×¢Òâ£¡²»ÒªÉ¾³ı»òĞŞ¸ÄÏÂÁĞ±»×¢ÊÍµÄĞĞ£¡
-'MappingInfo=UserControl,UserControl,-1,FontSize
-Public Property Get FontSize() As Single
-Attribute FontSize.VB_Description = "Ö¸¶¨¸ø¶¨²ãµÄÃ¿Ò»ĞĞ³öÏÖµÄ×ÖÌå´óĞ¡(ÒÔ°õÎªµ¥Î»)¡£"
-    FontSize = UserControl.FontSize
-End Property
-
-Public Property Let FontSize(ByVal New_FontSize As Single)
-    UserControl.FontSize() = New_FontSize
-    PropertyChanged "FontSize"
-End Property
-
-'×¢Òâ£¡²»ÒªÉ¾³ı»òĞŞ¸ÄÏÂÁĞ±»×¢ÊÍµÄĞĞ£¡
-'MappingInfo=UserControl,UserControl,-1,FontStrikethru
-Public Property Get FontStrikethru() As Boolean
-Attribute FontStrikethru.VB_Description = "·µ»Ø/ÉèÖÃÉ¾³ıÏß×ÖÌåÑùÊ½¡£"
-    FontStrikethru = UserControl.FontStrikethru
-End Property
-
-Public Property Let FontStrikethru(ByVal New_FontStrikethru As Boolean)
-    UserControl.FontStrikethru() = New_FontStrikethru
-    PropertyChanged "FontStrikethru"
-End Property
-
-'×¢Òâ£¡²»ÒªÉ¾³ı»òĞŞ¸ÄÏÂÁĞ±»×¢ÊÍµÄĞĞ£¡
-'MappingInfo=UserControl,UserControl,-1,FontTransparent
-Public Property Get FontTransparent() As Boolean
-Attribute FontTransparent.VB_Description = "·µ»Ø/ÉèÖÃÒ»¸öÖµ£¬¾ö¶¨ÊÇ·ñÏÔÊ¾´°Ìå¡¢´òÓ¡»ú»ò PictureBox ÉÏµÄ±³¾°ÎÄ±¾/Í¼ĞÎ¡£"
-    FontTransparent = UserControl.FontTransparent
-End Property
-
-Public Property Let FontTransparent(ByVal New_FontTransparent As Boolean)
-    UserControl.FontTransparent() = New_FontTransparent
-    PropertyChanged "FontTransparent"
-End Property
-
-'×¢Òâ£¡²»ÒªÉ¾³ı»òĞŞ¸ÄÏÂÁĞ±»×¢ÊÍµÄĞĞ£¡
-'MappingInfo=UserControl,UserControl,-1,FontUnderline
-Public Property Get FontUnderline() As Boolean
-Attribute FontUnderline.VB_Description = "·µ»Ø/ÉèÖÃÏÂ»®Ïß×ÖÌåÑùÊ½¡£"
-    FontUnderline = UserControl.FontUnderline
-End Property
-
-Public Property Let FontUnderline(ByVal New_FontUnderline As Boolean)
-    UserControl.FontUnderline() = New_FontUnderline
-    PropertyChanged "FontUnderline"
-End Property
+''×¢Òâ£¡²»ÒªÉ¾³ı»òĞŞ¸ÄÏÂÁĞ±»×¢ÊÍµÄĞĞ£¡
+''MappingInfo=UserControl,UserControl,-1,FontBold
+'Public Property Get FontBold() As Boolean
+'    FontBold = UserControl.FontBold
+'End Property
+'
+'Public Property Let FontBold(ByVal New_FontBold As Boolean)
+'    UserControl.FontBold() = New_FontBold
+'    PropertyChanged "FontBold"
+'End Property
+'
+''×¢Òâ£¡²»ÒªÉ¾³ı»òĞŞ¸ÄÏÂÁĞ±»×¢ÊÍµÄĞĞ£¡
+''MappingInfo=UserControl,UserControl,-1,FontItalic
+'Public Property Get FontItalic() As Boolean
+'    FontItalic = UserControl.FontItalic
+'End Property
+'
+'Public Property Let FontItalic(ByVal New_FontItalic As Boolean)
+'    UserControl.FontItalic() = New_FontItalic
+'    PropertyChanged "FontItalic"
+'End Property
+'
+''×¢Òâ£¡²»ÒªÉ¾³ı»òĞŞ¸ÄÏÂÁĞ±»×¢ÊÍµÄĞĞ£¡
+''MappingInfo=UserControl,UserControl,-1,FontName
+'Public Property Get FontName() As String
+'    FontName = UserControl.FontName
+'End Property
+'
+'Public Property Let FontName(ByVal New_FontName As String)
+'    UserControl.FontName() = New_FontName
+'    PropertyChanged "FontName"
+'End Property
+'
+''×¢Òâ£¡²»ÒªÉ¾³ı»òĞŞ¸ÄÏÂÁĞ±»×¢ÊÍµÄĞĞ£¡
+''MappingInfo=UserControl,UserControl,-1,FontSize
+''Public Property Get FontSize() As Single
+''    FontSize = UserControl.FontSize
+''End Property
+''
+''Public Property Let FontSize(ByVal New_FontSize As Single)
+''    UserControl.FontSize() = New_FontSize
+''    PropertyChanged "FontSize"
+''End Property
+'
+''×¢Òâ£¡²»ÒªÉ¾³ı»òĞŞ¸ÄÏÂÁĞ±»×¢ÊÍµÄĞĞ£¡
+''MappingInfo=UserControl,UserControl,-1,FontStrikethru
+''Public Property Get FontStrikethru() As Boolean
+''    FontStrikethru = UserControl.FontStrikethru
+''End Property
+''
+''Public Property Let FontStrikethru(ByVal New_FontStrikethru As Boolean)
+''    UserControl.FontStrikethru() = New_FontStrikethru
+''    PropertyChanged "FontStrikethru"
+''End Property
+'
+''×¢Òâ£¡²»ÒªÉ¾³ı»òĞŞ¸ÄÏÂÁĞ±»×¢ÊÍµÄĞĞ£¡
+''MappingInfo=UserControl,UserControl,-1,FontTransparent
+'Public Property Get FontTransparent() As Boolean
+'    FontTransparent = UserControl.FontTransparent
+'End Property
+'
+'Public Property Let FontTransparent(ByVal New_FontTransparent As Boolean)
+'    UserControl.FontTransparent() = New_FontTransparent
+'    PropertyChanged "FontTransparent"
+'End Property
+'
+''×¢Òâ£¡²»ÒªÉ¾³ı»òĞŞ¸ÄÏÂÁĞ±»×¢ÊÍµÄĞĞ£¡
+''MappingInfo=UserControl,UserControl,-1,FontUnderline
+'Public Property Get FontUnderline() As Boolean
+'    FontUnderline = UserControl.FontUnderline
+'End Property
+'
+'Public Property Let FontUnderline(ByVal New_FontUnderline As Boolean)
+'    UserControl.FontUnderline() = New_FontUnderline
+'    PropertyChanged "FontUnderline"
+'End Property
 
 '×¢Òâ£¡²»ÒªÉ¾³ı»òĞŞ¸ÄÏÂÁĞ±»×¢ÊÍµÄĞĞ£¡
 'MappingInfo=UserControl,UserControl,-1,HasDC
@@ -386,9 +385,9 @@ End Sub
 
 '×¢Òâ£¡²»ÒªÉ¾³ı»òĞŞ¸ÄÏÂÁĞ±»×¢ÊÍµÄĞĞ£¡
 'MappingInfo=UserControl,UserControl,-1,hWnd
-Public Property Get hWnd() As Long
-Attribute hWnd.VB_Description = "·µ»ØÒ»¸ö¾ä±úµ½(from Microsoft Windows)Ò»¸ö¶ÔÏóµÄ´°¿Ú¡£"
-    hWnd = UserControl.hWnd
+Public Property Get hwnd() As Long
+Attribute hwnd.VB_Description = "·µ»ØÒ»¸ö¾ä±úµ½(from Microsoft Windows)Ò»¸ö¶ÔÏóµÄ´°¿Ú¡£"
+    hwnd = UserControl.hwnd
 End Property
 
 '×¢Òâ£¡²»ÒªÉ¾³ı»òĞŞ¸ÄÏÂÁĞ±»×¢ÊÍµÄĞĞ£¡
@@ -398,12 +397,6 @@ Attribute Image.VB_Description = "·µ»ØÒ»¸ö Microsoft Windows Ìá¹©µÄ¾ä±úµ½Ò»¸ö³Ö¾
     Set Image = UserControl.Image
 End Property
 
-'×¢Òâ£¡²»ÒªÉ¾³ı»òĞŞ¸ÄÏÂÁĞ±»×¢ÊÍµÄĞĞ£¡
-'MappingInfo=UserControl,UserControl,-1,Line
-Public Sub Line(ByVal Flags As Integer, ByVal X1 As Single, ByVal Y1 As Single, ByVal X2 As Single, ByVal Y2 As Single, ByVal Color As Long)
-Attribute Line.VB_Description = "ÔÚ¶ÔÏóÉÏ»­Ö±Ïß»ò¾ØĞÎ¡£"
-    UserControl.Line Flags,X1,Y1,X2,Y2,Color
-End Sub
 
 '×¢Òâ£¡²»ÒªÉ¾³ı»òĞŞ¸ÄÏÂÁĞ±»×¢ÊÍµÄĞĞ£¡
 'MappingInfo=UserControl,UserControl,-1,MouseIcon
@@ -491,6 +484,7 @@ End Sub
 'ÎªÓÃ»§¿Ø¼ş³õÊ¼»¯ÊôĞÔ
 Private Sub UserControl_InitProperties()
     Set UserControl.Font = Ambient.Font
+    m_Alpha = m_def_Alpha
 End Sub
 
 '´Ó´æÖüÆ÷ÖĞ¼ÓÔØÊôĞÔÖµ
@@ -512,14 +506,15 @@ Private Sub UserControl_ReadProperties(PropBag As PropertyBag)
     UserControl.FillStyle = PropBag.ReadProperty("FillStyle", 1)
     UserControl.FontBold = PropBag.ReadProperty("FontBold", 0)
     UserControl.FontItalic = PropBag.ReadProperty("FontItalic", 0)
-    UserControl.FontName = PropBag.ReadProperty("FontName", "")
-    UserControl.FontSize = PropBag.ReadProperty("FontSize", 0)
-    UserControl.FontStrikethru = PropBag.ReadProperty("FontStrikethru", 0)
-    UserControl.FontTransparent = PropBag.ReadProperty("FontTransparent", True)
-    UserControl.FontUnderline = PropBag.ReadProperty("FontUnderline", 0)
+'    UserControl.FontName = PropBag.ReadProperty("FontName", "")
+'    UserControl.FontSize = PropBag.ReadProperty("FontSize", 0)
+ '   UserControl.FontStrikethru = PropBag.ReadProperty("FontStrikethru", 0)
+  '  UserControl.FontTransparent = PropBag.ReadProperty("FontTransparent", True)
+   ' UserControl.FontUnderline = PropBag.ReadProperty("FontUnderline", 0)
     Set MouseIcon = PropBag.ReadProperty("MouseIcon", Nothing)
     UserControl.MousePointer = PropBag.ReadProperty("MousePointer", 0)
     Set Picture = PropBag.ReadProperty("Picture", Nothing)
+    m_Alpha = PropBag.ReadProperty("Alpha", m_def_Alpha)
 End Sub
 
 '½«ÊôĞÔÖµĞ´µ½´æ´¢Æ÷
@@ -549,5 +544,19 @@ Private Sub UserControl_WriteProperties(PropBag As PropertyBag)
     Call PropBag.WriteProperty("MouseIcon", MouseIcon, Nothing)
     Call PropBag.WriteProperty("MousePointer", UserControl.MousePointer, 0)
     Call PropBag.WriteProperty("Picture", Picture, Nothing)
+    Call PropBag.WriteProperty("Alpha", m_Alpha, m_def_Alpha)
 End Sub
+
+'×¢Òâ£¡²»ÒªÉ¾³ı»òĞŞ¸ÄÏÂÁĞ±»×¢ÊÍµÄĞĞ£¡
+'MemberInfo=1,0,0,100
+Public Property Get Alpha() As Byte
+Attribute Alpha.VB_Description = "¿Ø¼şÍ¸Ã÷¶È£¨0-100£©"
+    Alpha = m_Alpha
+End Property
+
+Public Property Let Alpha(ByVal New_Alpha As Byte)
+    m_Alpha = New_Alpha
+    PropertyChanged "Alpha"
+    SetTransparentWindow Me.hwnd, New_Alpha
+End Property
 

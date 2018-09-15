@@ -52,8 +52,8 @@ Print "This version is written by zhj."
 Print "Copyright (c) 2009-2011 Createnhance Solutions.All rights reserved."
 Me.Refresh
 Print "Status:Check Updates"
-Shell "update\Update.exe /checknow"
-'Sleep 3000
+'Shell "updater\Update.exe /checknow"
+Sleep 1000
 FrmMain.Show
 Unload Me
 End Sub
