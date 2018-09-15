@@ -37,7 +37,7 @@ Common.Hide
 Debugmode = False
 Loadactivex = False
 UnloadactiveX = False
-Beta = True
+Beta = False
 InitMeet = False
 registername = ""
 registercompany = ""

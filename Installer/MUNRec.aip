@@ -4,7 +4,7 @@
     <ROW Property="AI_MINXRESOLUTION" MultiBuildValue="DefaultBuild:800" ValueLocId="-"/>
     <ROW Property="AI_MINYRESOLUTION" MultiBuildValue="DefaultBuild:600" ValueLocId="-"/>
     <ROW Property="ALLUSERS" Value="2"/>
-    <ROW Property="ARPCOMMENTS" Value="[|ProductName] 安装包" ValueLocId="*"/>
+    <ROW Property="ARPCOMMENTS" Value="[|ProductName] 安装包 2.0正式版" ValueLocId="*"/>
     <ROW Property="ARPCONTACT" Value="朱焕杰"/>
     <ROW Property="ARPHELPLINK" Value="http://CreatenhanceTeam.1.vg"/>
     <ROW Property="ARPPRODUCTICON" Value="favicon_1.exe" Type="8"/>
@@ -14,10 +14,10 @@
     <ROW Property="CTRLS" Value="3"/>
     <ROW Property="DialogBitmap" MultiBuildValue="DefaultBuild:dialog_image.jpg" Type="1"/>
     <ROW Property="Manufacturer" Value="Createnhance Team" ValueLocId="*"/>
-    <ROW Property="ProductCode" Value="2052:{9A156BC9-A57E-4B35-9F6D-531D306FB7B5} " Type="16"/>
+    <ROW Property="ProductCode" Value="2052:{4A1640E1-B3C1-4972-86C1-99EF603BD6F3} " Type="16"/>
     <ROW Property="ProductLanguage" Value="2052"/>
-    <ROW Property="ProductName" Value="模拟联合国会议记录器" ValueLocId="*"/>
-    <ROW Property="ProductVersion" Value="1.8.0.5"/>
+    <ROW Property="ProductName" Value="模拟联合国会议记录器 2.0正式版" ValueLocId="*"/>
+    <ROW Property="ProductVersion" Value="2.1.1.0"/>
     <ROW Property="REBOOT" MultiBuildValue="DefaultBuild:ReallySuppress"/>
     <ROW Property="RUNAPPLICATION" Value="1" Type="4"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
@@ -28,32 +28,55 @@
     <ROW Directory="ActiveX_DIR" Directory_Parent="APPDIR" DefaultDir="ActiveX"/>
     <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+    <ROW Directory="doctotext_DIR" Directory_Parent="APPDIR" DefaultDir="doctot~1|doctotext"/>
+    <ROW Directory="iconv_DIR" Directory_Parent="APPDIR" DefaultDir="iconv"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
     <ROW Component="COMDLG32.OCX" ComponentId="{D222DBE2-63A0-45A7-9278-657C7A52091B}" Directory_="ActiveX_DIR" Attributes="0" KeyPath="COMDLG32.OCX"/>
+    <ROW Component="ChangeLog" ComponentId="{1D0145BA-F788-4291-B08B-7B5544621B60}" Directory_="doctotext_DIR" Attributes="0" KeyPath="ChangeLog" Type="0"/>
     <ROW Component="MSCOMCTL.OCX" ComponentId="{2E73F555-0DC5-4E2C-9CDF-24D24F665FEB}" Directory_="ActiveX_DIR" Attributes="0" KeyPath="MSCOMCTL.OCX"/>
     <ROW Component="MUNRec.exe" ComponentId="{134EC90E-BFDB-4B48-B807-8895075D4688}" Directory_="APPDIR" Attributes="0" KeyPath="MUNRec.exe"/>
     <ROW Component="MUNRec.exe.manifest" ComponentId="{946DDB5A-C0A2-4159-BCE3-6805E23F9AAC}" Directory_="APPDIR" Attributes="0" KeyPath="MUNRec.exe.manifest" Type="0"/>
     <ROW Component="RICHTX32.OCX" ComponentId="{232DD1DB-536A-44D5-BED3-87DEEA9D1F1B}" Directory_="ActiveX_DIR" Attributes="0" KeyPath="RICHTX32.OCX"/>
     <ROW Component="SHORTCUTDIR" ComponentId="{D4101937-7DC3-4BA0-B4CF-2FEE30D9619A}" Directory_="SHORTCUTDIR" Attributes="0"/>
+    <ROW Component="doctotext.exe" ComponentId="{E5BA7DD7-90FE-4D7E-B8AC-B33A20EAC5A5}" Directory_="doctotext_DIR" Attributes="0" KeyPath="doctotext.exe"/>
+    <ROW Component="iconv.dll" ComponentId="{464AE1DE-4AD9-40AD-BDF5-68B45B6D37EE}" Directory_="iconv_DIR" Attributes="0" KeyPath="iconv.dll"/>
+    <ROW Component="iconv.exe" ComponentId="{F6709B79-481E-4316-8438-4070F0BA82DE}" Directory_="iconv_DIR" Attributes="0" KeyPath="iconv.exe"/>
+    <ROW Component="libgcc_s_sjlj_1.dll" ComponentId="{9B730FFE-5994-4583-85EC-6CA593B9E6D1}" Directory_="doctotext_DIR" Attributes="0" KeyPath="libgcc_s_sjlj_1.dll"/>
+    <ROW Component="libglib_2.0_0.dll" ComponentId="{BD6D59C1-535A-4805-89ED-6022654184E3}" Directory_="doctotext_DIR" Attributes="0" KeyPath="libglib_2.0_0.dll"/>
+    <ROW Component="libgobject_2.0_0.dll" ComponentId="{F7E82D7F-86FE-421B-83C2-97F58CB72039}" Directory_="doctotext_DIR" Attributes="0" KeyPath="libgobject_2.0_0.dll"/>
+    <ROW Component="libgsf_1_114.dll" ComponentId="{149980DF-9757-4742-8577-AB0B511CC75A}" Directory_="doctotext_DIR" Attributes="0" KeyPath="libgsf_1_114.dll"/>
+    <ROW Component="libiconv_2.dll" ComponentId="{DCD0C39B-3173-4AD2-8913-6420CCB14EDD}" Directory_="doctotext_DIR" Attributes="0" KeyPath="libiconv_2.dll"/>
+    <ROW Component="libintl_8.dll" ComponentId="{C46AA862-FBE5-4737-BFB0-F02790735962}" Directory_="doctotext_DIR" Attributes="0" KeyPath="libintl_8.dll"/>
+    <ROW Component="libxml2_2.dll" ComponentId="{DB7BA22F-4D8D-4890-8104-811C75E62C7B}" Directory_="doctotext_DIR" Attributes="0" KeyPath="libxml2_2.dll"/>
     <ROW Component="updater.exe" ComponentId="{C24321C6-1C3C-45A8-8941-2C9B4482AC2C}" Directory_="APPDIR" Attributes="0" KeyPath="updater.exe"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
-    <ROW Feature="MainFeature" Title="MainFeature" Description="描述" Display="1" Level="1" Directory_="APPDIR" Attributes="0" Components="MUNRec.exe MUNRec.exe.manifest COMDLG32.OCX MSCOMCTL.OCX SHORTCUTDIR updater.exe RICHTX32.OCX"/>
+    <ROW Feature="MainFeature" Title="MainFeature" Description="描述" Display="1" Level="1" Directory_="APPDIR" Attributes="0" Components="MUNRec.exe MUNRec.exe.manifest COMDLG32.OCX MSCOMCTL.OCX SHORTCUTDIR updater.exe RICHTX32.OCX ChangeLog doctotext.exe libglib_2.0_0.dll libgobject_2.0_0.dll libgsf_1_114.dll libiconv_2.dll libintl_8.dll libxml2_2.dll libgcc_s_sjlj_1.dll iconv.dll iconv.exe"/>
     <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
-    <ROW File="COMDLG32.OCX" Component_="COMDLG32.OCX" FileName="COMDLG32.OCX" Attributes="516" SourcePath="..\ActiveX\COMDLG32.OCX" SelfReg="true" Sequence="4"/>
-    <ROW File="MSCOMCTL.OCX" Component_="MSCOMCTL.OCX" FileName="MSCOMCTL.OCX" Attributes="516" SourcePath="..\ActiveX\MSCOMCTL.OCX" SelfReg="true" Sequence="5"/>
-    <ROW File="MUNREC.cfg" Component_="MUNRec.exe.manifest" FileName="MUNREC.cfg" Version="65535.65535.65535.65535" Attributes="7" SourcePath="Install Files\Main\MUNREC.cfg" SelfReg="false" Sequence="7"/>
+    <ROW File="COMDLG32.OCX" Component_="COMDLG32.OCX" FileName="COMDLG32.OCX" Attributes="516" SourcePath="..\ActiveX\COMDLG32.OCX" SelfReg="true" Sequence="3"/>
+    <ROW File="ChangeLog" Component_="ChangeLog" FileName="Change~1|ChangeLog" Attributes="0" SourcePath="Install Files\Main\doctotext\ChangeLog" SelfReg="false" Sequence="10"/>
+    <ROW File="MSCOMCTL.OCX" Component_="MSCOMCTL.OCX" FileName="MSCOMCTL.OCX" Attributes="516" SourcePath="..\ActiveX\MSCOMCTL.OCX" SelfReg="true" Sequence="4"/>
+    <ROW File="MUNREC.cfg" Component_="MUNRec.exe.manifest" FileName="MUNREC.cfg" Version="65535.65535.65535.65535" Attributes="7" SourcePath="Install Files\Main\MUNREC.cfg" SelfReg="false" Sequence="6"/>
     <ROW File="MUNRec.exe" Component_="MUNRec.exe" FileName="MUNRec.exe" Version="65535.65535.65535.65535" Attributes="512" SourcePath="Install Files\Main\MUNRec.exe" SelfReg="false" Sequence="1"/>
     <ROW File="MUNRec.exe.manifest" Component_="MUNRec.exe.manifest" FileName="MUNRec~1.man|MUNRec.exe.manifest" Attributes="0" SourcePath="Install Files\Main\MUNRec.exe.manifest" SelfReg="false" Sequence="2"/>
-    <ROW File="MUNRec.txt" Component_="MUNRec.exe.manifest" FileName="MUNRec.txt" Attributes="0" SourcePath="Install Files\Main\MUNRec.txt" SelfReg="false" Sequence="10"/>
-    <ROW File="MUNreg.cfg" Component_="MUNRec.exe.manifest" FileName="MUNreg.cfg" Attributes="0" SourcePath="Install Files\Main\MUNreg.cfg" SelfReg="false" Sequence="11"/>
-    <ROW File="NewFeatures.txt" Component_="MUNRec.exe.manifest" FileName="NewFea~1.txt|NewFeatures.txt" Attributes="0" SourcePath="Install Files\Main\NewFeatures.txt" SelfReg="false" Sequence="6"/>
-    <ROW File="RICHTX32.OCX" Component_="RICHTX32.OCX" FileName="RICHTX32.OCX" Attributes="516" SourcePath="..\ActiveX\RICHTX32.OCX" SelfReg="true" Sequence="9"/>
-    <ROW File="setting.ini" Component_="MUNRec.exe.manifest" FileName="setting.ini" Attributes="0" SourcePath="Install Files\Main\setting.ini" SelfReg="false" Sequence="3"/>
-    <ROW File="updater.exe" Component_="updater.exe" FileName="Update.exe" Version="65535.65535.65535.65535" Attributes="0" SourcePath="&lt;AI_STUBS&gt;updater.exe" SelfReg="false" Sequence="8" DigSign="true"/>
+    <ROW File="MUNreg.cfg" Component_="MUNRec.exe.manifest" FileName="MUNreg.cfg" Attributes="0" SourcePath="Install Files\Main\MUNreg.cfg" SelfReg="false" Sequence="9"/>
+    <ROW File="NewFeatures.txt" Component_="MUNRec.exe.manifest" FileName="NewFea~1.txt|NewFeatures.txt" Attributes="0" SourcePath="Install Files\Main\NewFeatures.txt" SelfReg="false" Sequence="5"/>
+    <ROW File="RICHTX32.OCX" Component_="RICHTX32.OCX" FileName="RICHTX32.OCX" Attributes="516" SourcePath="..\ActiveX\RICHTX32.OCX" SelfReg="true" Sequence="8"/>
+    <ROW File="VERSION" Component_="ChangeLog" FileName="VERSION" Attributes="0" SourcePath="Install Files\Main\doctotext\VERSION" SelfReg="false" Sequence="19"/>
+    <ROW File="doctotext.exe" Component_="doctotext.exe" FileName="doctot~1.exe|doctotext.exe" Attributes="0" SourcePath="Install Files\Main\doctotext\doctotext.exe" SelfReg="false" Sequence="11"/>
+    <ROW File="iconv.dll" Component_="iconv.dll" FileName="iconv.dll" Attributes="0" SourcePath="Install Files\Main\iconv\iconv.dll" SelfReg="false" Sequence="20"/>
+    <ROW File="iconv.exe" Component_="iconv.exe" FileName="iconv.exe" Attributes="0" SourcePath="Install Files\Main\iconv\iconv.exe" SelfReg="false" Sequence="21"/>
+    <ROW File="libgcc_s_sjlj_1.dll" Component_="libgcc_s_sjlj_1.dll" FileName="libgcc~1.dll|libgcc_s_sjlj-1.dll" Attributes="0" SourcePath="Install Files\Main\doctotext\libgcc_s_sjlj-1.dll" SelfReg="false" Sequence="18"/>
+    <ROW File="libglib_2.0_0.dll" Component_="libglib_2.0_0.dll" FileName="libgli~1.dll|libglib-2.0-0.dll" Attributes="0" SourcePath="Install Files\Main\doctotext\libglib-2.0-0.dll" SelfReg="false" Sequence="12"/>
+    <ROW File="libgobject_2.0_0.dll" Component_="libgobject_2.0_0.dll" FileName="libgob~1.dll|libgobject-2.0-0.dll" Attributes="0" SourcePath="Install Files\Main\doctotext\libgobject-2.0-0.dll" SelfReg="false" Sequence="13"/>
+    <ROW File="libgsf_1_114.dll" Component_="libgsf_1_114.dll" FileName="libgsf~1.dll|libgsf-1-114.dll" Attributes="0" SourcePath="Install Files\Main\doctotext\libgsf-1-114.dll" SelfReg="false" Sequence="14"/>
+    <ROW File="libiconv_2.dll" Component_="libiconv_2.dll" FileName="libico~1.dll|libiconv-2.dll" Attributes="0" SourcePath="Install Files\Main\doctotext\libiconv-2.dll" SelfReg="false" Sequence="15"/>
+    <ROW File="libintl_8.dll" Component_="libintl_8.dll" FileName="libint~1.dll|libintl-8.dll" Attributes="0" SourcePath="Install Files\Main\doctotext\libintl-8.dll" SelfReg="false" Sequence="16"/>
+    <ROW File="libxml2_2.dll" Component_="libxml2_2.dll" FileName="libxml~1.dll|libxml2-2.dll" Attributes="0" SourcePath="Install Files\Main\doctotext\libxml2-2.dll" SelfReg="false" Sequence="17"/>
+    <ROW File="updater.exe" Component_="updater.exe" FileName="Update.exe" Version="65535.65535.65535.65535" Attributes="0" SourcePath="&lt;AI_STUBS&gt;updater.exe" SelfReg="false" Sequence="7" DigSign="true"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
     <ROW BootstrOptKey="GlobalOptions" Options="2" EulaPathLocId="*" IntroTextPathLocId="*"/>
@@ -105,8 +128,8 @@
     <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
     <ROW Action="AI_UPDATER_UNINSTALL" Type="18" Source="updater.exe" Target="/clean silent"/>
     <ROW Action="AI_ViewReadme" Type="1" Source="aicustact.dll" Target="[#NewFeatures.txt]"/>
-    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[ProgramFilesFolder] [ProductName]"/>
-    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[ProgramFilesFolder]MUNRec"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]" MultiBuildTarget="DefaultBuild:[ProgramMenuFolder]模拟联合国会议记录器"/>
     <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">

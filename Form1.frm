@@ -7,7 +7,7 @@ Begin VB.Form Form1
    ClientHeight    =   10230
    ClientLeft      =   60
    ClientTop       =   750
-   ClientWidth     =   15210
+   ClientWidth     =   15240
    BeginProperty Font 
       Name            =   "微软雅黑"
       Size            =   26.25
@@ -21,100 +21,11 @@ Begin VB.Form Form1
    LinkTopic       =   "Form1"
    ScaleHeight     =   682
    ScaleMode       =   3  'Pixel
-   ScaleWidth      =   1014
+   ScaleWidth      =   1016
    Begin VB.Timer Refreshform 
       Interval        =   10
       Left            =   0
-      Top             =   720
-   End
-   Begin VB.Frame meetcontrol 
-      Caption         =   "会议控制"
-      BeginProperty Font 
-         Name            =   "微软雅黑"
-         Size            =   9
-         Charset         =   134
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   615
-      Left            =   8640
-      TabIndex        =   38
-      Top             =   1080
-      Width           =   6495
-      Begin VB.CommandButton Startmeeting 
-         Caption         =   "开始会议"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "微软雅黑"
-            Size            =   9
-            Charset         =   134
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   240
-         TabIndex        =   42
-         Top             =   240
-         Width           =   1095
-      End
-      Begin VB.CommandButton Command10 
-         Caption         =   "暂停会议"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "微软雅黑"
-            Size            =   9
-            Charset         =   134
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   1800
-         TabIndex        =   41
-         Top             =   240
-         Width           =   1095
-      End
-      Begin VB.CommandButton Command11 
-         Caption         =   "终止会议"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "微软雅黑"
-            Size            =   9
-            Charset         =   134
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   3360
-         TabIndex        =   40
-         Top             =   240
-         Width           =   1095
-      End
-      Begin VB.CommandButton Command12 
-         Caption         =   "会议设置"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "微软雅黑"
-            Size            =   9
-            Charset         =   134
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   4920
-         TabIndex        =   39
-         Top             =   240
-         Width           =   1095
-      End
+      Top             =   600
    End
    Begin VB.Frame frame2 
       Caption         =   "会议记录"
@@ -127,19 +38,19 @@ Begin VB.Form Form1
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   7695
-      Left            =   5040
+      Height          =   9975
+      Left            =   5160
       TabIndex        =   21
-      Top             =   2280
-      Width           =   10095
+      Top             =   0
+      Width           =   9975
       Begin RichTextLib.RichTextBox Text1 
-         Height          =   6975
+         Height          =   9255
          Left            =   120
-         TabIndex        =   57
+         TabIndex        =   34
          Top             =   600
-         Width           =   9855
-         _ExtentX        =   17383
-         _ExtentY        =   12303
+         Width           =   9735
+         _ExtentX        =   17171
+         _ExtentY        =   16325
          _Version        =   393217
          Enabled         =   -1  'True
          ScrollBars      =   2
@@ -158,10 +69,10 @@ Begin VB.Form Form1
       Begin MSComctlLib.Toolbar Toolbar1 
          Height          =   390
          Left            =   120
-         TabIndex        =   58
+         TabIndex        =   35
          Top             =   240
-         Width           =   9855
-         _ExtentX        =   17383
+         Width           =   9735
+         _ExtentX        =   17171
          _ExtentY        =   688
          ButtonWidth     =   609
          ButtonHeight    =   582
@@ -251,7 +162,7 @@ Begin VB.Form Form1
             EndProperty
          EndProperty
          Begin VB.CommandButton Fontset 
-            Caption         =   "字体..."
+            Caption         =   "字体"
             BeginProperty Font 
                Name            =   "微软雅黑"
                Size            =   9
@@ -263,9 +174,9 @@ Begin VB.Form Form1
             EndProperty
             Height          =   330
             Left            =   9000
-            TabIndex        =   61
+            TabIndex        =   38
             Top             =   0
-            Width           =   855
+            Width           =   735
          End
          Begin VB.ComboBox Fontsizebox 
             BeginProperty Font 
@@ -279,8 +190,7 @@ Begin VB.Form Form1
             EndProperty
             Height          =   375
             Left            =   7680
-            Sorted          =   -1  'True
-            TabIndex        =   60
+            TabIndex        =   37
             Text            =   "选择字号"
             Top             =   0
             Width           =   1335
@@ -299,337 +209,10 @@ Begin VB.Form Form1
             Left            =   4920
             Sorted          =   -1  'True
             Style           =   2  'Dropdown List
-            TabIndex        =   59
+            TabIndex        =   36
             Top             =   0
             Width           =   2775
          End
-      End
-   End
-   Begin VB.Frame statuscontrol 
-      Caption         =   "进程控制（当前版本不可用）"
-      BeginProperty Font 
-         Name            =   "微软雅黑"
-         Size            =   9
-         Charset         =   134
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   615
-      Left            =   120
-      TabIndex        =   43
-      Top             =   1680
-      Width           =   15015
-      Begin VB.CommandButton Command16 
-         Caption         =   "新动议"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "微软雅黑"
-            Size            =   9
-            Charset         =   134
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   4440
-         TabIndex        =   47
-         Top             =   240
-         Width           =   1095
-      End
-      Begin VB.CommandButton Command15 
-         Caption         =   "回到主发言名单"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "微软雅黑"
-            Size            =   9
-            Charset         =   134
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   1440
-         TabIndex        =   46
-         Top             =   240
-         Width           =   1455
-      End
-      Begin VB.CommandButton Command14 
-         Caption         =   "新问题"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "微软雅黑"
-            Size            =   9
-            Charset         =   134
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   3120
-         TabIndex        =   45
-         Top             =   240
-         Width           =   1095
-      End
-      Begin VB.CommandButton Command13 
-         Caption         =   "让渡时间"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "微软雅黑"
-            Size            =   9
-            Charset         =   134
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   120
-         TabIndex        =   44
-         Top             =   240
-         Width           =   1095
-      End
-   End
-   Begin VB.Frame Meetinf 
-      Caption         =   "会议信息（当前版本不可用）"
-      BeginProperty Font 
-         Name            =   "微软雅黑"
-         Size            =   9
-         Charset         =   134
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   1095
-      Left            =   8640
-      TabIndex        =   25
-      Top             =   0
-      Width           =   6495
-      Begin VB.Timer Meettime 
-         Interval        =   1000
-         Left            =   6000
-         Top             =   600
-      End
-      Begin VB.Label Label16 
-         AutoSize        =   -1  'True
-         Caption         =   "N/A"
-         BeginProperty Font 
-            Name            =   "微软雅黑"
-            Size            =   9
-            Charset         =   134
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   4080
-         TabIndex        =   37
-         Top             =   720
-         Width           =   345
-      End
-      Begin VB.Label Label14 
-         AutoSize        =   -1  'True
-         Caption         =   "剩余时间"
-         BeginProperty Font 
-            Name            =   "微软雅黑"
-            Size            =   9
-            Charset         =   134
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   3240
-         TabIndex        =   36
-         Top             =   720
-         Width           =   720
-      End
-      Begin VB.Label Meetstatus 
-         AutoSize        =   -1  'True
-         Caption         =   "N/A"
-         BeginProperty Font 
-            Name            =   "微软雅黑"
-            Size            =   9
-            Charset         =   134
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   4080
-         TabIndex        =   35
-         Top             =   480
-         Width           =   345
-      End
-      Begin VB.Label Label15 
-         AutoSize        =   -1  'True
-         Caption         =   "会议进程"
-         BeginProperty Font 
-            Name            =   "微软雅黑"
-            Size            =   9
-            Charset         =   134
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   3240
-         TabIndex        =   34
-         Top             =   480
-         Width           =   720
-      End
-      Begin VB.Label timepassed 
-         AutoSize        =   -1  'True
-         Caption         =   "00 : 00 : 00"
-         BeginProperty Font 
-            Name            =   "微软雅黑"
-            Size            =   9
-            Charset         =   134
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   4080
-         TabIndex        =   33
-         Top             =   240
-         Width           =   960
-      End
-      Begin VB.Label Label13 
-         AutoSize        =   -1  'True
-         Caption         =   "已经过"
-         BeginProperty Font 
-            Name            =   "微软雅黑"
-            Size            =   9
-            Charset         =   134
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   3240
-         TabIndex        =   32
-         Top             =   240
-         Width           =   540
-      End
-      Begin VB.Label continuetime 
-         AutoSize        =   -1  'True
-         Caption         =   "N/A"
-         BeginProperty Font 
-            Name            =   "微软雅黑"
-            Size            =   9
-            Charset         =   134
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   1080
-         TabIndex        =   31
-         Top             =   720
-         Width           =   345
-      End
-      Begin VB.Label meetStarttime 
-         AutoSize        =   -1  'True
-         Caption         =   "N/A"
-         BeginProperty Font 
-            Name            =   "微软雅黑"
-            Size            =   9
-            Charset         =   134
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   1080
-         TabIndex        =   30
-         Top             =   480
-         Width           =   345
-      End
-      Begin VB.Label meetname 
-         AutoSize        =   -1  'True
-         Caption         =   "N/A"
-         BeginProperty Font 
-            Name            =   "微软雅黑"
-            Size            =   9
-            Charset         =   134
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   1080
-         TabIndex        =   29
-         Top             =   240
-         Width           =   345
-      End
-      Begin VB.Label Label12 
-         AutoSize        =   -1  'True
-         Caption         =   "预计时长"
-         BeginProperty Font 
-            Name            =   "微软雅黑"
-            Size            =   9
-            Charset         =   134
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   120
-         TabIndex        =   28
-         Top             =   720
-         Width           =   720
-      End
-      Begin VB.Label Label11 
-         AutoSize        =   -1  'True
-         Caption         =   "开始时间"
-         BeginProperty Font 
-            Name            =   "微软雅黑"
-            Size            =   9
-            Charset         =   134
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   120
-         TabIndex        =   27
-         Top             =   480
-         Width           =   720
-      End
-      Begin VB.Label Label10 
-         AutoSize        =   -1  'True
-         Caption         =   "会议名称"
-         BeginProperty Font 
-            Name            =   "微软雅黑"
-            Size            =   9
-            Charset         =   134
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   120
-         TabIndex        =   26
-         Top             =   240
-         Width           =   720
       End
    End
    Begin VB.Frame Frame1 
@@ -643,11 +226,28 @@ Begin VB.Form Form1
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   1695
+      Height          =   2295
       Left            =   120
       TabIndex        =   1
       Top             =   0
-      Width           =   8415
+      Width           =   4935
+      Begin VB.CommandButton Timersetting 
+         Caption         =   "设置"
+         BeginProperty Font 
+            Name            =   "微软雅黑"
+            Size            =   9
+            Charset         =   134
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   3720
+         TabIndex        =   39
+         Top             =   1920
+         Width           =   975
+      End
       Begin VB.CommandButton stopclock 
          Caption         =   "复位"
          BeginProperty Font 
@@ -662,7 +262,7 @@ Begin VB.Form Form1
          Height          =   255
          Left            =   2520
          TabIndex        =   15
-         Top             =   1320
+         Top             =   1920
          Width           =   975
       End
       Begin VB.CommandButton pauseclock 
@@ -679,7 +279,7 @@ Begin VB.Form Form1
          Height          =   255
          Left            =   1320
          TabIndex        =   14
-         Top             =   1320
+         Top             =   1920
          Width           =   975
       End
       Begin VB.CommandButton Startclock 
@@ -696,19 +296,19 @@ Begin VB.Form Form1
          Height          =   255
          Left            =   120
          TabIndex        =   13
-         Top             =   1320
+         Top             =   1920
          Width           =   975
       End
       Begin VB.Timer timer3 
          Enabled         =   0   'False
          Interval        =   1000
-         Left            =   7800
-         Top             =   1080
+         Left            =   4560
+         Top             =   120
       End
       Begin VB.Timer clockcontrol 
          Interval        =   50
-         Left            =   7320
-         Top             =   1080
+         Left            =   4200
+         Top             =   120
       End
       Begin VB.Label Label6 
          Alignment       =   2  'Center
@@ -725,7 +325,7 @@ Begin VB.Form Form1
             Strikethrough   =   0   'False
          EndProperty
          Height          =   1125
-         Left            =   3000
+         Left            =   120
          TabIndex        =   10
          Top             =   240
          Width           =   4650
@@ -743,9 +343,9 @@ Begin VB.Form Form1
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   960
+         Left            =   3600
          TabIndex        =   9
-         Top             =   960
+         Top             =   1560
          Width           =   345
       End
       Begin VB.Label Label5 
@@ -761,9 +361,9 @@ Begin VB.Form Form1
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   120
+         Left            =   2760
          TabIndex        =   8
-         Top             =   960
+         Top             =   1560
          Width           =   720
       End
       Begin VB.Label Label4 
@@ -779,9 +379,9 @@ Begin VB.Form Form1
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   960
+         Left            =   3600
          TabIndex        =   7
-         Top             =   720
+         Top             =   1320
          Width           =   345
       End
       Begin VB.Label Label3 
@@ -797,9 +397,9 @@ Begin VB.Form Form1
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   120
+         Left            =   2760
          TabIndex        =   6
-         Top             =   720
+         Top             =   1320
          Width           =   540
       End
       Begin VB.Label timesetting 
@@ -817,7 +417,7 @@ Begin VB.Form Form1
          Height          =   255
          Left            =   960
          TabIndex        =   5
-         Top             =   480
+         Top             =   1560
          Width           =   570
       End
       Begin VB.Label Label2 
@@ -835,7 +435,7 @@ Begin VB.Form Form1
          Height          =   255
          Left            =   120
          TabIndex        =   4
-         Top             =   480
+         Top             =   1560
          Width           =   720
       End
       Begin VB.Label systemtime 
@@ -853,7 +453,7 @@ Begin VB.Form Form1
          Height          =   255
          Left            =   960
          TabIndex        =   3
-         Top             =   240
+         Top             =   1320
          Width           =   570
       End
       Begin VB.Label Label1 
@@ -871,7 +471,7 @@ Begin VB.Form Form1
          Height          =   255
          Left            =   120
          TabIndex        =   2
-         Top             =   240
+         Top             =   1320
          Width           =   720
       End
    End
@@ -888,8 +488,8 @@ Begin VB.Form Form1
       Left            =   0
       TabIndex        =   0
       Top             =   9975
-      Width           =   15210
-      _ExtentX        =   26829
+      Width           =   15240
+      _ExtentX        =   26882
       _ExtentY        =   450
       _Version        =   393216
       BeginProperty Panels {8E3867A5-8586-11D1-B16A-00C0F0283628} 
@@ -910,11 +510,11 @@ Begin VB.Form Form1
          EndProperty
          BeginProperty Panel3 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   6
-            TextSave        =   "2011-7-28"
+            TextSave        =   "2011-7-29"
          EndProperty
          BeginProperty Panel4 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   5
-            TextSave        =   "17:04"
+            TextSave        =   "18:21"
          EndProperty
          BeginProperty Panel5 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   1
@@ -960,7 +560,7 @@ Begin VB.Form Form1
       Left            =   120
       TabIndex        =   11
       Top             =   2280
-      Width           =   4815
+      Width           =   4935
       Begin VB.Frame Framedel 
          Caption         =   "删除"
          BeginProperty Font 
@@ -974,7 +574,7 @@ Begin VB.Form Form1
          EndProperty
          Height          =   1095
          Left            =   120
-         TabIndex        =   48
+         TabIndex        =   25
          Top             =   480
          Visible         =   0   'False
          Width           =   4575
@@ -992,7 +592,7 @@ Begin VB.Form Form1
             EndProperty
             Height          =   255
             Left            =   1080
-            TabIndex        =   50
+            TabIndex        =   27
             Top             =   720
             Width           =   855
          End
@@ -1009,7 +609,7 @@ Begin VB.Form Form1
             EndProperty
             Height          =   255
             Left            =   2640
-            TabIndex        =   49
+            TabIndex        =   26
             Top             =   720
             Width           =   855
          End
@@ -1027,7 +627,7 @@ Begin VB.Form Form1
             EndProperty
             Height          =   255
             Left            =   1680
-            TabIndex        =   51
+            TabIndex        =   28
             Top             =   360
             Width           =   1260
          End
@@ -1130,7 +730,7 @@ Begin VB.Form Form1
          EndProperty
          Height          =   1335
          Left            =   120
-         TabIndex        =   52
+         TabIndex        =   29
          Top             =   480
          Visible         =   0   'False
          Width           =   4575
@@ -1146,7 +746,7 @@ Begin VB.Form Form1
             EndProperty
             Height          =   375
             Left            =   120
-            TabIndex        =   55
+            TabIndex        =   32
             Top             =   480
             Width           =   4215
          End
@@ -1164,7 +764,7 @@ Begin VB.Form Form1
             EndProperty
             Height          =   255
             Left            =   3480
-            TabIndex        =   54
+            TabIndex        =   31
             Top             =   960
             Width           =   855
          End
@@ -1181,7 +781,7 @@ Begin VB.Form Form1
             EndProperty
             Height          =   255
             Left            =   2400
-            TabIndex        =   53
+            TabIndex        =   30
             Top             =   960
             Width           =   855
          End
@@ -1199,7 +799,7 @@ Begin VB.Form Form1
             EndProperty
             Height          =   255
             Left            =   120
-            TabIndex        =   56
+            TabIndex        =   33
             Top             =   240
             Width           =   1080
          End
@@ -1270,7 +870,7 @@ Begin VB.Form Form1
          Left            =   120
          List            =   "Form1.frx":0639
          TabIndex        =   12
-         Top             =   480
+         Top             =   600
          Width           =   4575
       End
    End
@@ -1344,62 +944,21 @@ Begin VB.Form Form1
       Caption         =   "文件(&F)"
       Begin VB.Menu MNew 
          Caption         =   "新建"
-         Enabled         =   0   'False
          Shortcut        =   ^N
       End
       Begin VB.Menu MOpen 
          Caption         =   "打开..."
-         Enabled         =   0   'False
          Shortcut        =   ^O
       End
       Begin VB.Menu MSave 
          Caption         =   "保存..."
-         Enabled         =   0   'False
          Shortcut        =   ^S
-      End
-      Begin VB.Menu MSaveas 
-         Caption         =   "另存为..."
-         Enabled         =   0   'False
       End
       Begin VB.Menu M_1 
          Caption         =   "-"
       End
       Begin VB.Menu MExit 
          Caption         =   "退出"
-      End
-   End
-   Begin VB.Menu MEdit 
-      Caption         =   "编辑(&E)"
-      Enabled         =   0   'False
-      Begin VB.Menu MNewevent 
-         Caption         =   "新事件"
-         Begin VB.Menu MNewpapre 
-            Caption         =   "文件"
-            Begin VB.Menu MNewcp 
-               Caption         =   "立场文件"
-            End
-            Begin VB.Menu MNewwp 
-               Caption         =   "工作文件"
-            End
-            Begin VB.Menu MNewdr 
-               Caption         =   "决议草案"
-            End
-            Begin VB.Menu MNewam 
-               Caption         =   "修正案"
-            End
-            Begin VB.Menu MNewre 
-               Caption         =   "决议案"
-            End
-         End
-         Begin VB.Menu MNewcaucus 
-            Caption         =   "磋商"
-            Begin VB.Menu MNewmc 
-               Caption         =   "有组织核心磋商"
-            End
-            Begin VB.Menu MNewuc 
-               Caption         =   "自由磋商"
-            End
-         End
       End
    End
    Begin VB.Menu MClock 
@@ -1417,17 +976,7 @@ Begin VB.Form Form1
          Caption         =   "-"
       End
       Begin VB.Menu MClockSetting 
-         Caption         =   "时间设定"
-      End
-   End
-   Begin VB.Menu MOption 
-      Caption         =   "设置(&O)"
-      Enabled         =   0   'False
-      Begin VB.Menu MPreferences 
-         Caption         =   "全局设置"
-      End
-      Begin VB.Menu MMeetingsetting 
-         Caption         =   "会议设置"
+         Caption         =   "定时器设置"
       End
    End
    Begin VB.Menu MHelp 
@@ -1435,6 +984,9 @@ Begin VB.Form Form1
       Begin VB.Menu MHelpindex 
          Caption         =   "帮助主题"
          Enabled         =   0   'False
+      End
+      Begin VB.Menu MInternet 
+         Caption         =   "官方网站"
       End
       Begin VB.Menu M_4 
          Caption         =   "-"
@@ -1465,14 +1017,6 @@ Public tempstr As String
 Public Timernum As Double
 Public Filename As String
 Public onloading As Boolean
-Public Enum eventtype
-            Speakerlist = 1
-            ModeratedCaucus = 2
-            UnmoderatedCaucus = 3
-            motion = 4
-            Point = 5
-       End Enum
-Public inputdata As String
 Public editing As Integer
 Public Bigclockshow As Integer
 Public isclockstarted As Boolean
@@ -1570,6 +1114,14 @@ End Sub
 '----------------------------------------检查更新--------------------------------
 Private Sub MCheckUpdate_Click()
 Shell "update.exe /checknow", vbNormalFocus
+End Sub
+
+
+Private Sub MInternet_Click()
+Wait.Show
+DoEvents
+Common.Runprog "start iexplore http://createnhanceteam.1.vg"
+Unload Wait
 End Sub
 
 Private Sub MUpdateSetting_Click()
@@ -1673,6 +1225,10 @@ Private Sub pauseclock_Click()
 pause
 End Sub
 
+Private Sub Timersetting_Click()
+Clocksetting.Show
+End Sub
+
 '-----------------------------------菜单项操作------------------------
 Private Sub MAbout_Click()
 frmAbout.Show
@@ -1687,7 +1243,6 @@ pause
 End Sub
 
 Private Sub MClockSetting_Click()
-pause
 Clocksetting.Show
 End Sub
 
@@ -1699,16 +1254,19 @@ Unload Me
 End Sub
 
 Private Sub MOpen_Click()
-Dialog1.Filter = "所有支持的文件类型(.munrec;.txt;.dat;.csv)|(*.munrec;*.txt;*.dat;*.csv)|模联记录文件(.munrec)|(*.munrec)"
-Dialog1.ShowOpen
-Filename = Dialog1.Filename
+openf
+End Sub
+
+Private Sub MNew_Click()
+newf
+End Sub
+
+Private Sub MSave_Click()
+savef
 End Sub
 
 '-----------------------------------------各个Timer控件操作----------------------------------
-Private Sub Meettime_Timer() '刷新会议时间
-Meettiming = Meettiming + 1
-timepassed.Caption = formattime(Meettiming)
-End Sub
+
 
 Private Sub Refreshform_Timer() '刷新form1
 If isclockstarted = True Then
@@ -1789,7 +1347,7 @@ Label6.ForeColor = vbRed
 Label6.Caption = "-" & formattime(t)
 End If
 Form1.Refresh
-If t <= 0 Then
+If t <= 0 Then    '时间到
 MsgBox "时间到", vbOKOnly, "提示"
 timer3.Enabled = False
 resetclock
@@ -1828,14 +1386,6 @@ List1.RemoveItem (i)
 Framedel.Visible = False
 End Sub
 
-'---------------------------------------会议属性----------------------------------
-Private Sub Command10_Click()
-Meettime.Enabled = False
-End Sub
-
-Private Sub Command11_Click()
-Meettime.Enabled = False
-End Sub
 
 '------------------------------------通用函数过程---------------------------
 Public Function formattime(ByVal t As Integer) As String  '秒数格式化为时：分：秒的字符串
@@ -1853,53 +1403,24 @@ End Function
 '--------------------------Open ini File------------------------
 Public Sub readini()
 Common.iniFileName = "setting.ini"
-meetname.Caption = Common.GetIniS("Meeting", "Name", "新会议1")
-StatusBar1.Panels(2).AutoSize = sbrContents
-StatusBar1.Panels(2).Text = Common.GetIniS("Meeting", "Name", "新会议1")
-meetStarttime.Caption = Common.GetIniS("Meeting", "Start_Y", 2011) & "年" & Common.GetIniS("Meeting", "Start_M", 7) & "月" & Common.GetIniS("Meeting", "Start_D", 23) & "日" & Common.GetIniS("Meeting", "Start_H", 7) & "时" & Common.GetIniS("Meeting", "Start_M", 0) & "分" & Common.GetIniS("Meeting", "Start_S", 0) & "秒"
-continuetime.Caption = formattime(Common.GetIniN("Meeting", "Lasttime", 3600))
+StatusBar1.Panels(2).AutoSize = sbrSpring
+StatusBar1.Panels(2).Text = "             "
 End Sub
+
+
 '---------------------------------------会议记录框------------------------------
 Private Sub Toolbar1_ButtonClick(ByVal Button As MSComctlLib.Button)         '工具栏
 
 If Button.Index = 1 Then   '新建
-g = MessageBox(Me.hWnd, "确实要清除文本框内容吗？此操作不可撤销！", "会议记录", vbOKCancel)
-If g = 1 Then
-Text1.Text = ""
-Toolbar1.Buttons(6).Enabled = False
-Toolbar1.Buttons(7).Enabled = False
-End If
+newf
 End If
 
 If Button.Index = 2 Then   '打开
-Dialog1.CancelError = True '出错处理
-On Error GoTo Cancel
-Dialog1.Filter = "所有支持的文档(*.rtf;*.txt)|*.rtf;*.txt|Rich Text Format(*.rtf)|*.rtf|文本文件(*.txt)|*.txt|所有文件(*.*)|*.*"
-Dialog1.FilterIndex = 1
-Dialog1.Filename = ""
-Dialog1.ShowOpen
-Text1.LoadFile Dialog1.Filename
-Cancel:
+openf
 End If
 
 If Button.Index = 3 Then   '保存
-save:
-Dialog1.CancelError = True '出错处理
-On Error GoTo cancel1
-Dialog1.Filter = "所有支持的文档(*.rtf;*.txt)|*.rtf;*.txt|Rich Text Format(*.rtf)|*.rtf|文本文件(*.txt)|*.txt|所有文件(*.*)|*.*"
-Dialog1.FilterIndex = 1
-Dialog1.Filename = ""
-Dialog1.ShowSave
-If Dialog1.FilterIndex = 1 Then
-If LCase(Right(Dialog1.Filename, 3)) = "rtf" Then Dialog1.FilterIndex = 2
-If LCase(Right(Dialog1.Filename, 3)) = "txt" Then Dialog1.FilterIndex = 3
-End If
-If Dialog1.FilterIndex = 3 Then
-h = MessageBox(Me.hWnd, "您选择了保存为文本文件格式，其中的图片、插入的文件及字体等设置将全部被清除。确认？", "警告", vbOKCancel)
-If h = 2 Then GoTo save
-End If
-Text1.SaveFile Dialog1.Filename, Dialog1.FilterIndex - 2
-cancel1:
+savef
 End If
 
 If Button.Index = 4 Then   '打印
@@ -1997,20 +1518,25 @@ Toolbar1.Buttons(6).Enabled = True
 Toolbar1.Buttons(7).Enabled = False
 End Sub
 
-
 Private Sub Fontset_Click()
 Dialog1.CancelError = True '出错处理
 On Error GoTo Cancel
 Dialog1.Flags = cdlCFEffects Or cdlCFBoth '设定选项（必要），
-
 '开始设置字体
-IIf Dialog1.FontName = Null, True, Dialog1.FontName = Text1.SelFontName
-IIf Dialog1.FontSize = Null, True, Dialog1.FontSize = Text1.SelFontSize
-IIf Dialog1.Color = Null, True, Dialog1.Color = Text1.SelColor
-IIf Dialog1.FontBold = Null, True, Dialog1.FontBold = Text1.SelBold
-IIf Dialog1.FontItalic = Null, True, Dialog1.FontItalic = Text1.SelItalic
-IIf Dialog1.FontUnderline = Null, True, Dialog1.FontUnderline = Text1.SelUnderline
-IIf Dialog1.FontStrikethru = Null, True, Dialog1.FontStrikethru = Text1.SelStrikeThru
+Dialog1.FontName = Text1.SelFontName
+Dialog1.FontSize = Text1.SelFontSize
+Dialog1.Color = Text1.SelColor
+Dialog1.FontBold = Text1.SelBold
+Dialog1.FontItalic = Text1.SelItalic
+Dialog1.FontUnderline = Text1.SelUnderline
+Dialog1.FontStrikethru = Text1.SelStrikeThru
+If Dialog1.FontName = Null Then Dialog1.FontName = "微软雅黑"
+If Dialog1.FontSize = Null Then Dialog1.FontSize = 24
+If Dialog1.Color = Null Then Dialog1.Color = vbBlack
+If Dialog1.FontBold = Null Then Dialog1.FontBold = False
+If Dialog1.FontItalic = Null Then Dialog1.FontItalic = False
+If Dialog1.FontUnderline = Null Then Dialog1.FontUnderline = False
+If Dialog1.FontStrikethru = Null Then Dialog1.FontStrikethru = False
 Dialog1.ShowFont
 Text1.SelFontName = Dialog1.FontName '以下是一一对应的关系
 Text1.SelFontSize = Dialog1.FontSize
@@ -2020,4 +1546,84 @@ Text1.SelItalic = Dialog1.FontItalic
 Text1.SelUnderline = Dialog1.FontUnderline
 Text1.SelStrikeThru = Dialog1.FontStrikethru
 Cancel:
+End Sub
+
+Public Sub savef()
+save:
+Dialog1.CancelError = True '出错处理
+On Error GoTo cancel1
+Dialog1.Filter = "所有支持的文档(*.rtf;*.txt;*.doc);*.docx|*.rtf;*.txt;*.doc;*.docx|Microsoft Word文档|*.doc;*.docx|Rich Text Format(*.rtf)|*.rtf|文本文件(*.txt)|*.txt|所有文件(*.*)|*.*"
+Dialog1.FilterIndex = 1
+Dialog1.Filename = ""
+Dialog1.ShowSave
+If Dialog1.FilterIndex = 1 Then
+If LCase(Right(Dialog1.Filename, 3)) = "rtf" Then
+Dialog1.FilterIndex = 2
+ElseIf LCase(Right(Dialog1.Filename, 3)) = "txt" Then
+Dialog1.FilterIndex = 3
+Else: Dialog1.FilterIndex = 4
+End If
+End If
+If Dialog1.FilterIndex = 3 Then
+h = MessageBox(Me.hWnd, "您选择了保存为文本文件格式，其中的图片、插入的文件及字体等设置将全部被清除。确认？", "警告", vbOKCancel)
+If h = 2 Then GoTo save
+End If
+If Dialog1.FilterIndex = 4 Then
+h = MessageBox(hWnd, "本程序无法识别您要保存的格式，将以纯文本格式保存此文件，文件中的图片和格式设定等会全部丢失。单击“确定”继续，单击“取消”以保存RTF格式的文档，保留格式设置和图片等信息。", "警告", vbOKCancel)
+If h = 1 Then Dialog1.FilterIndex = 3
+If h = 2 Then Dialog1.FilterIndex = 2
+End If
+
+Text1.SaveFile Dialog1.Filename, Dialog1.FilterIndex - 2
+cancel1:
+End Sub
+
+
+
+Public Sub openf()
+Dim isdoc As Boolean
+isdoc = False
+Dialog1.CancelError = True '出错处理
+On Error GoTo Cancel
+Dialog1.Filter = "所有支持的文档(*.rtf;*.txt;*.doc;*.docx)|*.rtf;*.txt;*.doc;*.docx|Microsoft Word文档|*.doc;*.docx|Rich Text Format(*.rtf)|*.rtf|文本文件(*.txt)|*.txt|所有文件(*.*)|*.*"
+Dialog1.FilterIndex = 1
+Dialog1.Filename = ""
+Dialog1.ShowOpen
+If LCase(Right(Dialog1.Filename, 3)) = "doc" Or LCase(Right(Dialog1.Filename, 4)) = "docx" Then
+isdoc = True
+Wait.Label1.Caption = "正在转换文件格式，请稍候……"
+Wait.Show
+DoEvents
+Common.Runprog "Copy """ + Dialog1.Filename + """ c:\MUNTemp.doc"
+DoEvents
+Common.Runprog "doctotext\doctotext.exe c:\MUNTemp.doc>c:\MUNTemp.txt"
+Unload Wait
+Wait.Label1.Caption = "正在转换文件编码，请稍候……"
+Wait.Show
+DoEvents
+Common.Runprog "iconv\iconv.exe -f utf-8//IGNORE -t gb2312 c:\MUNTemp.txt > c:\MUNTGB.txt"
+Dialog1.Filename = "c:\MUNTGB.txt"
+End If
+Toolbar1.Buttons(6).Enabled = False
+Toolbar1.Buttons(7).Enabled = False
+Wait.Label1.Caption = "载入文件，请稍候……"
+Wait.Show
+DoEvents
+Text1.LoadFile Dialog1.Filename
+If isdoc Then
+Common.Runprog "del c:\MUNTemp.doc"
+Common.Runprog "del c:\MUNTemp.txt"
+Common.Runprog "del c:\MUNTGB.txt"
+End If
+Unload Wait
+Cancel:
+End Sub
+
+Public Sub newf()
+h = MessageBox(hWnd, "本操作将清除会议记录！继续？", "会议记录", vbOKCancel)
+If h = 1 Then
+Text1.Text = ""
+Toolbar1.Buttons(6).Enabled = False
+Toolbar1.Buttons(7).Enabled = False
+End If
 End Sub

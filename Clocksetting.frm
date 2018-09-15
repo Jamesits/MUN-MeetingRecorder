@@ -5,14 +5,38 @@ Begin VB.Form Clocksetting
    ClientHeight    =   2895
    ClientLeft      =   2760
    ClientTop       =   3750
-   ClientWidth     =   2895
+   ClientWidth     =   5055
    Icon            =   "Clocksetting.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ScaleHeight     =   2895
-   ScaleWidth      =   2895
+   ScaleWidth      =   5055
    ShowInTaskbar   =   0   'False
+   Begin VB.Frame viewsetting 
+      Caption         =   "显示设置"
+      Height          =   2175
+      Left            =   2880
+      TabIndex        =   10
+      Top             =   120
+      Width           =   1935
+      Begin VB.OptionButton Option2 
+         Caption         =   "显示剩余时间"
+         Height          =   255
+         Left            =   120
+         TabIndex        =   12
+         Top             =   720
+         Width           =   1455
+      End
+      Begin VB.OptionButton Option1 
+         Caption         =   "显示已经过时间"
+         Height          =   255
+         Left            =   120
+         TabIndex        =   11
+         Top             =   360
+         Width           =   1575
+      End
+   End
    Begin VB.Frame Frame1 
       Caption         =   "定时器设置"
       Height          =   2175
@@ -81,7 +105,7 @@ Begin VB.Form Clocksetting
    Begin VB.CommandButton CancelButton 
       Caption         =   "取消"
       Height          =   375
-      Left            =   1560
+      Left            =   3000
       TabIndex        =   1
       Top             =   2400
       Width           =   1215
@@ -89,7 +113,7 @@ Begin VB.Form Clocksetting
    Begin VB.CommandButton OKButton 
       Caption         =   "确定"
       Height          =   375
-      Left            =   120
+      Left            =   360
       TabIndex        =   0
       Top             =   2400
       Width           =   1215
@@ -114,10 +138,6 @@ Clocksetting.Hide
 End Sub
 
 Private Sub OKButton_Click()
-If Text1.Text = "" And Text2.Text = "" And Text3.Text = "" Then
-MsgBox "无数据！", vbOKOnly, "计时器"
-Exit Sub
-End If
 newsetting = Val(Text1.Text) * 3600 + Val(Text2.Text) * 60 + Val(Text3.Text)
 Clocksetting.Hide
 Form1.Timesetting1 = newsetting
@@ -127,3 +147,10 @@ MsgBox "时间将被重置！", vbOKCancel, "计时器"
 Form1.resetclock
 End Sub
 
+Private Sub Option1_Click()
+Form1.showgonetime
+End Sub
+
+Private Sub Option2_Click()
+Form1.showtimeleft
+End Sub
